@@ -39,4 +39,3 @@ Dependency management
 Bonus Slides/Material:
     Comparing existing tools
     Q&A
->>>>>>> 7f8f293caaab84ba94bb58e2815a45bf817b80c7

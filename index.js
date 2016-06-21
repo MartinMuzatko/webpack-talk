@@ -1,2 +1,6 @@
-var x = require('./README.md')
-document.body.innerHTML = x
+import html from './README.md'
+import './less/main.less'
+
+document.innerHTML = html
+
+var router = require('riot-route')
