@@ -1,30 +1,38 @@
-# Webpack Talk
+# Intro to frontend automation
 
-Intro to frontend automation
+Webpack can do a lot of stuff.
+Not only does webpack **transpile**, **compile**, **preprocess** your modules and bundle them, it can also help you to code more accurately and also faster.
 
-    NPM, Node, Webpack
+## How does one tool do all that?
 
-Usecase - What does Webpack do for you?
+If you are familiar with node and npm,
 
-    Preprocessing
-        coffeescript -> js
-        less -> css
+So what does webpack take care of?
 
-    Transpiling
-        ES6 > ES5
+### Preprocessing/Transpiling
+- JS
+    - Coffeescript
+    - Typescript
+    - Babel (ES6)
+- CSS
+    - Less
+    - Sass/Scss
+    - Stylus
 
-    Dependency Management
-        import, require
+### Dependency management
+- require('marked')
+- import marked from 'marked'
 
-    Optimizing
-        minify
-        fallback (rgba > hex)
+### Optimizing
+- minify
+- fallback (rgba > hex)
 
-    Tooling
-        Sourcemaps
-        Devserver - auto reload
+### Tools
+- Sourcemaps
+- Devserver - Auto reload
+- Linting
 
-    Bundling
+### Bundling
         Bundling everything together into one distributable file (or folder)
 
 Dependency management
