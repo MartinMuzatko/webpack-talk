@@ -46,41 +46,50 @@
 
 	'use strict';
 	
-	var _README = __webpack_require__(1);
+	var _README = __webpack_require__(4);
 	
 	var _README2 = _interopRequireDefault(_README);
 	
-	__webpack_require__(2);
+	__webpack_require__(5);
 	
-	var _riot = __webpack_require__(6);
+	var _riot = __webpack_require__(9);
 	
 	var _riot2 = _interopRequireDefault(_riot);
 	
-	__webpack_require__(9);
+	__webpack_require__(12);
+	
+	var _marked = __webpack_require__(16);
+	
+	var _marked2 = _interopRequireDefault(_marked);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	_marked2.default.Renderer();
 	
 	document.body.innerHTML = '<app>' + _README2.default + '</app>';
 	
 	_riot2.default.mount('*');
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1 id=\"webpack-talk\">Webpack Talk</h1>\n<p>Intro to frontend automation</p>\n<pre><code>NPM, Node, Webpack\n</code></pre><p>Usecase - What does Webpack do for you?</p>\n<pre><code>Preprocessing\n    coffeescript -&gt; js\n    less -&gt; css\n\nTranspiling\n    ES6 &gt; ES5\n\nDependency Management\n    import, require\n\nOptimizing\n    minify\n    fallback (rgba &gt; hex)\n\nTooling\n    Sourcemaps\n    Devserver - auto reload\n\nBundling\n    Bundling everything together into one distributable file (or folder)\n</code></pre><p>Dependency management\n    What is a Module (Anything really - js/html/css/md, etc)\n    Loading modules - Webpack loader chains (style!css!less)\n        Formats\n        Preloaders, Postloaders\n    Plugins extend loaders ()\n    JS module formats</p>\n<p>Bonus Slides/Material:\n    Comparing existing tools\n    Q&amp;A</p>\n";
+	module.exports = "<h1 id=\"webpack-talk\">Webpack Talk</h1>\n<p>Intro to frontend automation</p>\n<pre class=\"language-undefined\"><code class=\"language-undefined\">NPM<span class=\"token punctuation\" >,</span> Node<span class=\"token punctuation\" >,</span> Webpack</code></pre><p>Usecase - What does Webpack do for you?</p>\n<pre class=\"language-undefined\"><code class=\"language-undefined\">Preprocessing\n    coffeescript <span class=\"token operator\" >-</span><span class=\"token operator\" >></span> js\n    less <span class=\"token operator\" >-</span><span class=\"token operator\" >></span> css\n\nTranspiling\n    ES6 <span class=\"token operator\" >></span> ES5\n\nDependency Management\n    <span class=\"token keyword\" >import</span><span class=\"token punctuation\" >,</span> require\n\nOptimizing\n    minify\n    fallback <span class=\"token punctuation\" >(</span>rgba <span class=\"token operator\" >></span> hex<span class=\"token punctuation\" >)</span>\n\nTooling\n    Sourcemaps\n    Devserver <span class=\"token operator\" >-</span> auto reload\n\nBundling\n    Bundling everything together into one distributable file <span class=\"token punctuation\" >(</span>or folder<span class=\"token punctuation\" >)</span></code></pre><p>Dependency management\n    What is a Module (Anything really - js/html/css/md, etc)\n    Loading modules - Webpack loader chains (style!css!less)\n        Formats\n        Preloaders, Postloaders\n    Plugins extend loaders ()\n    JS module formats</p>\n<p>Bonus Slides/Material:\n    Comparing existing tools\n    Q&amp;A</p>\n";
 
 /***/ },
-/* 2 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(3);
+	var content = __webpack_require__(6);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -97,21 +106,21 @@
 	}
 
 /***/ },
-/* 3 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(4)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "body {\n  padding: 1em;\n}\n", ""]);
+	exports.push([module.id, "/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */\n/**\n * 1. Change the default font family in all browsers (opinionated).\n * 2. Prevent adjustments of font size after orientation changes in IE and iOS.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */\n}\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0;\n}\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n * 2. Add the correct display in IE.\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block;\n}\n/**\n * Add the correct display in IE 9-.\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline;\n}\n/**\n * Add the correct display in IE 10-.\n * 1. Add the correct display in IE.\n */\ntemplate,\n[hidden] {\n  display: none;\n}\n/* Links\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */\n}\n/**\n * Remove the outline on focused links when they are also active or hovered\n * in all browsers (opinionated).\n */\na:active,\na:hover {\n  outline-width: 0;\n}\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the bottom border in Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */\n}\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit;\n}\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder;\n}\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic;\n}\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%;\n}\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -0.25em;\n}\nsup {\n  top: -0.5em;\n}\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none;\n}\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden;\n}\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */\n}\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px;\n}\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */\n}\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change font properties to `inherit` in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\nselect,\ntextarea {\n  font: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */\n}\n/**\n * Restore the font weight unset by the previous rule.\n */\noptgroup {\n  font-weight: bold;\n}\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible;\n}\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none;\n}\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n}\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n/**\n * Change the border, margin, and padding in all browsers (opinionated).\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em;\n}\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */\n}\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto;\n}\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */\n}\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n}\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n/**\n * Correct the text style of placeholders in Chrome, Edge, and Safari.\n */\n::-webkit-input-placeholder {\n  color: inherit;\n  opacity: 0.54;\n}\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n}\n/**\n * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML\n * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);\n * @author Tim  Shedor\n */\ncode[class*=\"language-\"],\npre[class*=\"language-\"] {\n  color: black;\n  background: none;\n  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;\n  text-align: left;\n  white-space: pre;\n  word-spacing: normal;\n  word-break: normal;\n  word-wrap: normal;\n  line-height: 1.5;\n  -moz-tab-size: 4;\n  -o-tab-size: 4;\n  tab-size: 4;\n  -webkit-hyphens: none;\n  -moz-hyphens: none;\n  -ms-hyphens: none;\n  hyphens: none;\n}\n/* Code blocks */\npre[class*=\"language-\"] {\n  position: relative;\n  margin: .5em 0;\n  -webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;\n  -moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;\n  box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;\n  border-left: 10px solid #358ccb;\n  background-color: #fdfdfd;\n  background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-size: 3em 3em;\n  background-origin: content-box;\n  overflow: visible;\n  padding: 0;\n}\ncode[class*=\"language\"] {\n  max-height: inherit;\n  height: 100%;\n  padding: 0 1em;\n  display: block;\n  overflow: auto;\n}\n/* Margin bottom to accomodate shadow */\n:not(pre) > code[class*=\"language-\"],\npre[class*=\"language-\"] {\n  background-color: #fdfdfd;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  margin-bottom: 1em;\n}\n/* Inline code */\n:not(pre) > code[class*=\"language-\"] {\n  position: relative;\n  padding: .2em;\n  -webkit-border-radius: 0.3em;\n  -moz-border-radius: 0.3em;\n  -ms-border-radius: 0.3em;\n  -o-border-radius: 0.3em;\n  border-radius: 0.3em;\n  color: #c92c2c;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  display: inline;\n  white-space: normal;\n}\npre[class*=\"language-\"]:before,\npre[class*=\"language-\"]:after {\n  content: '';\n  z-index: -2;\n  display: block;\n  position: absolute;\n  bottom: 0.75em;\n  left: 0.18em;\n  width: 40%;\n  height: 20%;\n  max-height: 13em;\n  -webkit-box-shadow: 0px 13px 8px #979797;\n  -moz-box-shadow: 0px 13px 8px #979797;\n  box-shadow: 0px 13px 8px #979797;\n  -webkit-transform: rotate(-2deg);\n  -moz-transform: rotate(-2deg);\n  -ms-transform: rotate(-2deg);\n  -o-transform: rotate(-2deg);\n  transform: rotate(-2deg);\n}\n:not(pre) > code[class*=\"language-\"]:after,\npre[class*=\"language-\"]:after {\n  right: 0.75em;\n  left: auto;\n  -webkit-transform: rotate(2deg);\n  -moz-transform: rotate(2deg);\n  -ms-transform: rotate(2deg);\n  -o-transform: rotate(2deg);\n  transform: rotate(2deg);\n}\n.token.comment,\n.token.block-comment,\n.token.prolog,\n.token.doctype,\n.token.cdata {\n  color: #7D8B99;\n}\n.token.punctuation {\n  color: #5F6364;\n}\n.token.property,\n.token.tag,\n.token.boolean,\n.token.number,\n.token.function-name,\n.token.constant,\n.token.symbol,\n.token.deleted {\n  color: #c92c2c;\n}\n.token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.function,\n.token.builtin,\n.token.inserted {\n  color: #2f9c0a;\n}\n.token.operator,\n.token.entity,\n.token.url,\n.token.variable {\n  color: #a67f59;\n  background: rgba(255, 255, 255, 0.5);\n}\n.token.atrule,\n.token.attr-value,\n.token.keyword,\n.token.class-name {\n  color: #1990b8;\n}\n.token.regex,\n.token.important {\n  color: #e90;\n}\n.language-css .token.string,\n.style .token.string {\n  color: #a67f59;\n  background: rgba(255, 255, 255, 0.5);\n}\n.token.important {\n  font-weight: normal;\n}\n.token.bold {\n  font-weight: bold;\n}\n.token.italic {\n  font-style: italic;\n}\n.token.entity {\n  cursor: help;\n}\n.namespace {\n  opacity: .7;\n}\n@media screen and (max-width: 767px) {\n  pre[class*=\"language-\"]:before,\n  pre[class*=\"language-\"]:after {\n    bottom: 14px;\n    -webkit-box-shadow: none;\n    -moz-box-shadow: none;\n    box-shadow: none;\n  }\n}\n/* Plugin styles */\n.token.tab:not(:empty):before,\n.token.cr:before,\n.token.lf:before {\n  color: #e0d7d1;\n}\n/* Plugin styles: Line Numbers */\npre[class*=\"language-\"].line-numbers {\n  padding-left: 0;\n}\npre[class*=\"language-\"].line-numbers code {\n  padding-left: 3.8em;\n}\npre[class*=\"language-\"].line-numbers .line-numbers-rows {\n  left: 0;\n}\n/* Plugin styles: Line Highlight */\npre[class*=\"language-\"][data-line] {\n  padding-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n}\npre[data-line] code {\n  position: relative;\n  padding-left: 4em;\n}\npre .line-highlight {\n  margin-top: 0;\n}\n/*  ========================================\n    COLORS\n    ======================================== */\npre[class*=\"language-\"]:before,\npre[class*=\"language-\"]:after {\n  content: initial;\n}\nbody {\n  background: #FFF;\n}\n* {\n  box-sizing: border-box;\n}\nnav {\n  background: #2e8ab8;\n  position: fixed;\n  width: 100%;\n  box-shadow: inset 0 -0.33em 0 rgba(59, 72, 79, 0.2);\n}\nnav a {\n  transition: all .5s ease;\n  text-decoration: none;\n  color: #FFF;\n  padding: 1em 2em;\n  display: inline-block;\n}\nnav a:hover,\nnav a.active {\n  background: #FFF;\n  color: #2e8ab8;\n}\narticle {\n  padding: 1em;\n  padding-top: 4em;\n}\narticle > h1 {\n  font-size: 1.2rem;\n  padding: 0 0 1em;\n  border-bottom: 1px solid #2e8ab8;\n  text-transform: uppercase;\n  font-weight: 400;\n}\narticle > h1:before {\n  content: '// ';\n  color: #2e8ab8;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 4 */
+/* 7 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -166,7 +175,7 @@
 	};
 
 /***/ },
-/* 5 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -418,7 +427,7 @@
 
 
 /***/ },
-/* 6 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -2942,20 +2951,20 @@
 	  riot.Tag = Tag;
 	  // support CommonJS, AMD & browser
 	  /* istanbul ignore next */
-	  if (( false ? 'undefined' : _typeof(exports)) === T_OBJECT) module.exports = riot;else if (( false ? 'undefined' : _typeof(__webpack_require__(7))) === T_FUNCTION && _typeof(__webpack_require__(8)) !== T_UNDEF) !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	  if (( false ? 'undefined' : _typeof(exports)) === T_OBJECT) module.exports = riot;else if (( false ? 'undefined' : _typeof(__webpack_require__(10))) === T_FUNCTION && _typeof(__webpack_require__(11)) !== T_UNDEF) !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    return riot;
 	  }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else window.riot = riot;
 	})(typeof window != 'undefined' ? window : void 0);
 
 /***/ },
-/* 7 */
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
@@ -2963,22 +2972,22 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(riot) {'use strict';
 	
-	riot.tag2('app', '<nav> <a href="#{item}" each="{item in items}">{item}</a> </nav> <h1>{name}</h1> <article name="content"> <yield> </article>', '', '', function (opts) {
+	riot.tag2('app', '<nav> <a href="#{item}" class="{active: name == item}" each="{item in items}">{item}</a> </nav> <article> <h1>{name}</h1> <div name="content"> <yield> </div> </article>', '', '', function (opts) {
 	    var _this = this;
 	
 	    this.items = ['index', 'loader', 'plugin'];
 	    this.on('mount', function () {
 	        riot.route.start(true);
 	        riot.route(function (name) {
-	            if (name == 'index') {
-	                _this.content.innerHTML = __webpack_require__(1);
+	            if (name == 'index' || !name) {
+	                _this.content.innerHTML = __webpack_require__(4);
 	            } else {
-	                _this.content.innerHTML = __webpack_require__(10)("./" + name + '.md');
+	                _this.content.innerHTML = __webpack_require__(13)("./" + name + '.md');
 	            }
 	            _this.name = name;
 	            _this.update();
@@ -2986,15 +2995,15 @@
 	        riot.route('index');
 	    });
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./loader.md": 11,
-		"./plugin.md": 12
+		"./loader.md": 14,
+		"./plugin.md": 15
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -3007,20 +3016,1209 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 10;
+	webpackContext.id = 13;
 
 
 /***/ },
-/* 11 */
+/* 14 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1 id=\"what-is-a-loader-\">What is a loader?</h1>\n";
+	module.exports = "<h2 id=\"what-is-a-loader-\">What is a loader?</h2>\n<p>Loading modules - Webpack loader chains <code>style!css!less</code></p>\n<ul>\n<li>Formats</li>\n<li>Preloaders, Postloaders</li>\n</ul>\n<p>Example</p>\n<pre class=\"language-js\"><code class=\"language-js\"><span class=\"token keyword\" >var</span> webpack <span class=\"token operator\" >=</span> <span class=\"token function\" >require</span><span class=\"token punctuation\" >(</span><span class=\"token string\" >'webpack'</span><span class=\"token punctuation\" >)</span>\n\nmodule<span class=\"token punctuation\" >.</span>exports <span class=\"token operator\" >=</span> <span class=\"token punctuation\" >{</span>\n    entry<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./index.js'</span><span class=\"token punctuation\" >,</span>\n    output<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        path<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./'</span><span class=\"token punctuation\" >,</span>\n        filename<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'bundle.js'</span><span class=\"token punctuation\" >,</span>\n        sourceMapFilename<span class=\"token punctuation\" >:</span> <span class=\"token string\" >\"[name].js.map\"</span><span class=\"token punctuation\" >,</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    module<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        preLoaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'riotjs'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'eslint!source-map'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >]</span><span class=\"token punctuation\" >,</span>\n        loaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.md$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'html!markdown'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$|\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'babel'</span><span class=\"token punctuation\" >,</span> query<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span> presets<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'es2015-riot'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.less$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'style!css!less'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >]</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    plugins<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n        <span class=\"token keyword\" >new</span> <span class=\"token class-name\" >webpack<span class=\"token punctuation\" >.</span>ProvidePlugin</span><span class=\"token punctuation\" >(</span><span class=\"token punctuation\" >{</span>\n            riot<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'riot'</span>\n        <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >)</span>\n    <span class=\"token punctuation\" >]</span><span class=\"token punctuation\" >,</span>\n    eslint<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        configFile<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./.eslintrc'</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    devtool<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'source-map'</span>\n<span class=\"token punctuation\" >}</span></code></pre>";
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1 id=\"what-is-a-plugin-\">What is a plugin?</h1>\n";
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+	
+	/**
+	 * marked - a markdown parser
+	 * Copyright (c) 2011-2014, Christopher Jeffrey. (MIT Licensed)
+	 * https://github.com/chjj/marked
+	 */
+	
+	;(function () {
+	
+	  /**
+	   * Block-Level Grammar
+	   */
+	
+	  var block = {
+	    newline: /^\n+/,
+	    code: /^( {4}[^\n]+\n*)+/,
+	    fences: noop,
+	    hr: /^( *[-*_]){3,} *(?:\n+|$)/,
+	    heading: /^ *(#{1,6}) *([^\n]+?) *#* *(?:\n+|$)/,
+	    nptable: noop,
+	    lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
+	    blockquote: /^( *>[^\n]+(\n(?!def)[^\n]+)*\n*)+/,
+	    list: /^( *)(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
+	    html: /^ *(?:comment *(?:\n|\s*$)|closed *(?:\n{2,}|\s*$)|closing *(?:\n{2,}|\s*$))/,
+	    def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n+|$)/,
+	    table: noop,
+	    paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
+	    text: /^[^\n]+/
+	  };
+	
+	  block.bullet = /(?:[*+-]|\d+\.)/;
+	  block.item = /^( *)(bull) [^\n]*(?:\n(?!\1bull )[^\n]*)*/;
+	  block.item = replace(block.item, 'gm')(/bull/g, block.bullet)();
+	
+	  block.list = replace(block.list)(/bull/g, block.bullet)('hr', '\\n+(?=\\1?(?:[-*_] *){3,}(?:\\n+|$))')('def', '\\n+(?=' + block.def.source + ')')();
+	
+	  block.blockquote = replace(block.blockquote)('def', block.def)();
+	
+	  block._tag = '(?!(?:' + 'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code' + '|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo' + '|span|br|wbr|ins|del|img)\\b)\\w+(?!:/|[^\\w\\s@]*@)\\b';
+	
+	  block.html = replace(block.html)('comment', /<!--[\s\S]*?-->/)('closed', /<(tag)[\s\S]+?<\/\1>/)('closing', /<tag(?:"[^"]*"|'[^']*'|[^'">])*?>/)(/tag/g, block._tag)();
+	
+	  block.paragraph = replace(block.paragraph)('hr', block.hr)('heading', block.heading)('lheading', block.lheading)('blockquote', block.blockquote)('tag', '<' + block._tag)('def', block.def)();
+	
+	  /**
+	   * Normal Block Grammar
+	   */
+	
+	  block.normal = merge({}, block);
+	
+	  /**
+	   * GFM Block Grammar
+	   */
+	
+	  block.gfm = merge({}, block.normal, {
+	    fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *\n([\s\S]*?)\s*\1 *(?:\n+|$)/,
+	    paragraph: /^/,
+	    heading: /^ *(#{1,6}) +([^\n]+?) *#* *(?:\n+|$)/
+	  });
+	
+	  block.gfm.paragraph = replace(block.paragraph)('(?!', '(?!' + block.gfm.fences.source.replace('\\1', '\\2') + '|' + block.list.source.replace('\\1', '\\3') + '|')();
+	
+	  /**
+	   * GFM + Tables Block Grammar
+	   */
+	
+	  block.tables = merge({}, block.gfm, {
+	    nptable: /^ *(\S.*\|.*)\n *([-:]+ *\|[-| :]*)\n((?:.*\|.*(?:\n|$))*)\n*/,
+	    table: /^ *\|(.+)\n *\|( *[-:]+[-| :]*)\n((?: *\|.*(?:\n|$))*)\n*/
+	  });
+	
+	  /**
+	   * Block Lexer
+	   */
+	
+	  function Lexer(options) {
+	    this.tokens = [];
+	    this.tokens.links = {};
+	    this.options = options || marked.defaults;
+	    this.rules = block.normal;
+	
+	    if (this.options.gfm) {
+	      if (this.options.tables) {
+	        this.rules = block.tables;
+	      } else {
+	        this.rules = block.gfm;
+	      }
+	    }
+	  }
+	
+	  /**
+	   * Expose Block Rules
+	   */
+	
+	  Lexer.rules = block;
+	
+	  /**
+	   * Static Lex Method
+	   */
+	
+	  Lexer.lex = function (src, options) {
+	    var lexer = new Lexer(options);
+	    return lexer.lex(src);
+	  };
+	
+	  /**
+	   * Preprocessing
+	   */
+	
+	  Lexer.prototype.lex = function (src) {
+	    src = src.replace(/\r\n|\r/g, '\n').replace(/\t/g, '    ').replace(/\u00a0/g, ' ').replace(/\u2424/g, '\n');
+	
+	    return this.token(src, true);
+	  };
+	
+	  /**
+	   * Lexing
+	   */
+	
+	  Lexer.prototype.token = function (src, top, bq) {
+	    var src = src.replace(/^ +$/gm, ''),
+	        next,
+	        loose,
+	        cap,
+	        bull,
+	        b,
+	        item,
+	        space,
+	        i,
+	        l;
+	
+	    while (src) {
+	      // newline
+	      if (cap = this.rules.newline.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        if (cap[0].length > 1) {
+	          this.tokens.push({
+	            type: 'space'
+	          });
+	        }
+	      }
+	
+	      // code
+	      if (cap = this.rules.code.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        cap = cap[0].replace(/^ {4}/gm, '');
+	        this.tokens.push({
+	          type: 'code',
+	          text: !this.options.pedantic ? cap.replace(/\n+$/, '') : cap
+	        });
+	        continue;
+	      }
+	
+	      // fences (gfm)
+	      if (cap = this.rules.fences.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        this.tokens.push({
+	          type: 'code',
+	          lang: cap[2],
+	          text: cap[3] || ''
+	        });
+	        continue;
+	      }
+	
+	      // heading
+	      if (cap = this.rules.heading.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        this.tokens.push({
+	          type: 'heading',
+	          depth: cap[1].length,
+	          text: cap[2]
+	        });
+	        continue;
+	      }
+	
+	      // table no leading pipe (gfm)
+	      if (top && (cap = this.rules.nptable.exec(src))) {
+	        src = src.substring(cap[0].length);
+	
+	        item = {
+	          type: 'table',
+	          header: cap[1].replace(/^ *| *\| *$/g, '').split(/ *\| */),
+	          align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
+	          cells: cap[3].replace(/\n$/, '').split('\n')
+	        };
+	
+	        for (i = 0; i < item.align.length; i++) {
+	          if (/^ *-+: *$/.test(item.align[i])) {
+	            item.align[i] = 'right';
+	          } else if (/^ *:-+: *$/.test(item.align[i])) {
+	            item.align[i] = 'center';
+	          } else if (/^ *:-+ *$/.test(item.align[i])) {
+	            item.align[i] = 'left';
+	          } else {
+	            item.align[i] = null;
+	          }
+	        }
+	
+	        for (i = 0; i < item.cells.length; i++) {
+	          item.cells[i] = item.cells[i].split(/ *\| */);
+	        }
+	
+	        this.tokens.push(item);
+	
+	        continue;
+	      }
+	
+	      // lheading
+	      if (cap = this.rules.lheading.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        this.tokens.push({
+	          type: 'heading',
+	          depth: cap[2] === '=' ? 1 : 2,
+	          text: cap[1]
+	        });
+	        continue;
+	      }
+	
+	      // hr
+	      if (cap = this.rules.hr.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        this.tokens.push({
+	          type: 'hr'
+	        });
+	        continue;
+	      }
+	
+	      // blockquote
+	      if (cap = this.rules.blockquote.exec(src)) {
+	        src = src.substring(cap[0].length);
+	
+	        this.tokens.push({
+	          type: 'blockquote_start'
+	        });
+	
+	        cap = cap[0].replace(/^ *> ?/gm, '');
+	
+	        // Pass `top` to keep the current
+	        // "toplevel" state. This is exactly
+	        // how markdown.pl works.
+	        this.token(cap, top, true);
+	
+	        this.tokens.push({
+	          type: 'blockquote_end'
+	        });
+	
+	        continue;
+	      }
+	
+	      // list
+	      if (cap = this.rules.list.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        bull = cap[2];
+	
+	        this.tokens.push({
+	          type: 'list_start',
+	          ordered: bull.length > 1
+	        });
+	
+	        // Get each top-level item.
+	        cap = cap[0].match(this.rules.item);
+	
+	        next = false;
+	        l = cap.length;
+	        i = 0;
+	
+	        for (; i < l; i++) {
+	          item = cap[i];
+	
+	          // Remove the list item's bullet
+	          // so it is seen as the next token.
+	          space = item.length;
+	          item = item.replace(/^ *([*+-]|\d+\.) +/, '');
+	
+	          // Outdent whatever the
+	          // list item contains. Hacky.
+	          if (~item.indexOf('\n ')) {
+	            space -= item.length;
+	            item = !this.options.pedantic ? item.replace(new RegExp('^ {1,' + space + '}', 'gm'), '') : item.replace(/^ {1,4}/gm, '');
+	          }
+	
+	          // Determine whether the next list item belongs here.
+	          // Backpedal if it does not belong in this list.
+	          if (this.options.smartLists && i !== l - 1) {
+	            b = block.bullet.exec(cap[i + 1])[0];
+	            if (bull !== b && !(bull.length > 1 && b.length > 1)) {
+	              src = cap.slice(i + 1).join('\n') + src;
+	              i = l - 1;
+	            }
+	          }
+	
+	          // Determine whether item is loose or not.
+	          // Use: /(^|\n)(?! )[^\n]+\n\n(?!\s*$)/
+	          // for discount behavior.
+	          loose = next || /\n\n(?!\s*$)/.test(item);
+	          if (i !== l - 1) {
+	            next = item.charAt(item.length - 1) === '\n';
+	            if (!loose) loose = next;
+	          }
+	
+	          this.tokens.push({
+	            type: loose ? 'loose_item_start' : 'list_item_start'
+	          });
+	
+	          // Recurse.
+	          this.token(item, false, bq);
+	
+	          this.tokens.push({
+	            type: 'list_item_end'
+	          });
+	        }
+	
+	        this.tokens.push({
+	          type: 'list_end'
+	        });
+	
+	        continue;
+	      }
+	
+	      // html
+	      if (cap = this.rules.html.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        this.tokens.push({
+	          type: this.options.sanitize ? 'paragraph' : 'html',
+	          pre: !this.options.sanitizer && (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
+	          text: cap[0]
+	        });
+	        continue;
+	      }
+	
+	      // def
+	      if (!bq && top && (cap = this.rules.def.exec(src))) {
+	        src = src.substring(cap[0].length);
+	        this.tokens.links[cap[1].toLowerCase()] = {
+	          href: cap[2],
+	          title: cap[3]
+	        };
+	        continue;
+	      }
+	
+	      // table (gfm)
+	      if (top && (cap = this.rules.table.exec(src))) {
+	        src = src.substring(cap[0].length);
+	
+	        item = {
+	          type: 'table',
+	          header: cap[1].replace(/^ *| *\| *$/g, '').split(/ *\| */),
+	          align: cap[2].replace(/^ *|\| *$/g, '').split(/ *\| */),
+	          cells: cap[3].replace(/(?: *\| *)?\n$/, '').split('\n')
+	        };
+	
+	        for (i = 0; i < item.align.length; i++) {
+	          if (/^ *-+: *$/.test(item.align[i])) {
+	            item.align[i] = 'right';
+	          } else if (/^ *:-+: *$/.test(item.align[i])) {
+	            item.align[i] = 'center';
+	          } else if (/^ *:-+ *$/.test(item.align[i])) {
+	            item.align[i] = 'left';
+	          } else {
+	            item.align[i] = null;
+	          }
+	        }
+	
+	        for (i = 0; i < item.cells.length; i++) {
+	          item.cells[i] = item.cells[i].replace(/^ *\| *| *\| *$/g, '').split(/ *\| */);
+	        }
+	
+	        this.tokens.push(item);
+	
+	        continue;
+	      }
+	
+	      // top-level paragraph
+	      if (top && (cap = this.rules.paragraph.exec(src))) {
+	        src = src.substring(cap[0].length);
+	        this.tokens.push({
+	          type: 'paragraph',
+	          text: cap[1].charAt(cap[1].length - 1) === '\n' ? cap[1].slice(0, -1) : cap[1]
+	        });
+	        continue;
+	      }
+	
+	      // text
+	      if (cap = this.rules.text.exec(src)) {
+	        // Top-level should never reach here.
+	        src = src.substring(cap[0].length);
+	        this.tokens.push({
+	          type: 'text',
+	          text: cap[0]
+	        });
+	        continue;
+	      }
+	
+	      if (src) {
+	        throw new Error('Infinite loop on byte: ' + src.charCodeAt(0));
+	      }
+	    }
+	
+	    return this.tokens;
+	  };
+	
+	  /**
+	   * Inline-Level Grammar
+	   */
+	
+	  var inline = {
+	    escape: /^\\([\\`*{}\[\]()#+\-.!_>])/,
+	    autolink: /^<([^ >]+(@|:\/)[^ >]+)>/,
+	    url: noop,
+	    tag: /^<!--[\s\S]*?-->|^<\/?\w+(?:"[^"]*"|'[^']*'|[^'">])*?>/,
+	    link: /^!?\[(inside)\]\(href\)/,
+	    reflink: /^!?\[(inside)\]\s*\[([^\]]*)\]/,
+	    nolink: /^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]/,
+	    strong: /^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,
+	    em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+	    code: /^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,
+	    br: /^ {2,}\n(?!\s*$)/,
+	    del: noop,
+	    text: /^[\s\S]+?(?=[\\<!\[_*`]| {2,}\n|$)/
+	  };
+	
+	  inline._inside = /(?:\[[^\]]*\]|[^\[\]]|\](?=[^\[]*\]))*/;
+	  inline._href = /\s*<?([\s\S]*?)>?(?:\s+['"]([\s\S]*?)['"])?\s*/;
+	
+	  inline.link = replace(inline.link)('inside', inline._inside)('href', inline._href)();
+	
+	  inline.reflink = replace(inline.reflink)('inside', inline._inside)();
+	
+	  /**
+	   * Normal Inline Grammar
+	   */
+	
+	  inline.normal = merge({}, inline);
+	
+	  /**
+	   * Pedantic Inline Grammar
+	   */
+	
+	  inline.pedantic = merge({}, inline.normal, {
+	    strong: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
+	    em: /^_(?=\S)([\s\S]*?\S)_(?!_)|^\*(?=\S)([\s\S]*?\S)\*(?!\*)/
+	  });
+	
+	  /**
+	   * GFM Inline Grammar
+	   */
+	
+	  inline.gfm = merge({}, inline.normal, {
+	    escape: replace(inline.escape)('])', '~|])')(),
+	    url: /^(https?:\/\/[^\s<]+[^<.,:;"')\]\s])/,
+	    del: /^~~(?=\S)([\s\S]*?\S)~~/,
+	    text: replace(inline.text)(']|', '~]|')('|', '|https?://|')()
+	  });
+	
+	  /**
+	   * GFM + Line Breaks Inline Grammar
+	   */
+	
+	  inline.breaks = merge({}, inline.gfm, {
+	    br: replace(inline.br)('{2,}', '*')(),
+	    text: replace(inline.gfm.text)('{2,}', '*')()
+	  });
+	
+	  /**
+	   * Inline Lexer & Compiler
+	   */
+	
+	  function InlineLexer(links, options) {
+	    this.options = options || marked.defaults;
+	    this.links = links;
+	    this.rules = inline.normal;
+	    this.renderer = this.options.renderer || new Renderer();
+	    this.renderer.options = this.options;
+	
+	    if (!this.links) {
+	      throw new Error('Tokens array requires a `links` property.');
+	    }
+	
+	    if (this.options.gfm) {
+	      if (this.options.breaks) {
+	        this.rules = inline.breaks;
+	      } else {
+	        this.rules = inline.gfm;
+	      }
+	    } else if (this.options.pedantic) {
+	      this.rules = inline.pedantic;
+	    }
+	  }
+	
+	  /**
+	   * Expose Inline Rules
+	   */
+	
+	  InlineLexer.rules = inline;
+	
+	  /**
+	   * Static Lexing/Compiling Method
+	   */
+	
+	  InlineLexer.output = function (src, links, options) {
+	    var inline = new InlineLexer(links, options);
+	    return inline.output(src);
+	  };
+	
+	  /**
+	   * Lexing/Compiling
+	   */
+	
+	  InlineLexer.prototype.output = function (src) {
+	    var out = '',
+	        link,
+	        text,
+	        href,
+	        cap;
+	
+	    while (src) {
+	      // escape
+	      if (cap = this.rules.escape.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        out += cap[1];
+	        continue;
+	      }
+	
+	      // autolink
+	      if (cap = this.rules.autolink.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        if (cap[2] === '@') {
+	          text = cap[1].charAt(6) === ':' ? this.mangle(cap[1].substring(7)) : this.mangle(cap[1]);
+	          href = this.mangle('mailto:') + text;
+	        } else {
+	          text = escape(cap[1]);
+	          href = text;
+	        }
+	        out += this.renderer.link(href, null, text);
+	        continue;
+	      }
+	
+	      // url (gfm)
+	      if (!this.inLink && (cap = this.rules.url.exec(src))) {
+	        src = src.substring(cap[0].length);
+	        text = escape(cap[1]);
+	        href = text;
+	        out += this.renderer.link(href, null, text);
+	        continue;
+	      }
+	
+	      // tag
+	      if (cap = this.rules.tag.exec(src)) {
+	        if (!this.inLink && /^<a /i.test(cap[0])) {
+	          this.inLink = true;
+	        } else if (this.inLink && /^<\/a>/i.test(cap[0])) {
+	          this.inLink = false;
+	        }
+	        src = src.substring(cap[0].length);
+	        out += this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : escape(cap[0]) : cap[0];
+	        continue;
+	      }
+	
+	      // link
+	      if (cap = this.rules.link.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        this.inLink = true;
+	        out += this.outputLink(cap, {
+	          href: cap[2],
+	          title: cap[3]
+	        });
+	        this.inLink = false;
+	        continue;
+	      }
+	
+	      // reflink, nolink
+	      if ((cap = this.rules.reflink.exec(src)) || (cap = this.rules.nolink.exec(src))) {
+	        src = src.substring(cap[0].length);
+	        link = (cap[2] || cap[1]).replace(/\s+/g, ' ');
+	        link = this.links[link.toLowerCase()];
+	        if (!link || !link.href) {
+	          out += cap[0].charAt(0);
+	          src = cap[0].substring(1) + src;
+	          continue;
+	        }
+	        this.inLink = true;
+	        out += this.outputLink(cap, link);
+	        this.inLink = false;
+	        continue;
+	      }
+	
+	      // strong
+	      if (cap = this.rules.strong.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        out += this.renderer.strong(this.output(cap[2] || cap[1]));
+	        continue;
+	      }
+	
+	      // em
+	      if (cap = this.rules.em.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        out += this.renderer.em(this.output(cap[2] || cap[1]));
+	        continue;
+	      }
+	
+	      // code
+	      if (cap = this.rules.code.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        out += this.renderer.codespan(escape(cap[2], true));
+	        continue;
+	      }
+	
+	      // br
+	      if (cap = this.rules.br.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        out += this.renderer.br();
+	        continue;
+	      }
+	
+	      // del (gfm)
+	      if (cap = this.rules.del.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        out += this.renderer.del(this.output(cap[1]));
+	        continue;
+	      }
+	
+	      // text
+	      if (cap = this.rules.text.exec(src)) {
+	        src = src.substring(cap[0].length);
+	        out += this.renderer.text(escape(this.smartypants(cap[0])));
+	        continue;
+	      }
+	
+	      if (src) {
+	        throw new Error('Infinite loop on byte: ' + src.charCodeAt(0));
+	      }
+	    }
+	
+	    return out;
+	  };
+	
+	  /**
+	   * Compile Link
+	   */
+	
+	  InlineLexer.prototype.outputLink = function (cap, link) {
+	    var href = escape(link.href),
+	        title = link.title ? escape(link.title) : null;
+	
+	    return cap[0].charAt(0) !== '!' ? this.renderer.link(href, title, this.output(cap[1])) : this.renderer.image(href, title, escape(cap[1]));
+	  };
+	
+	  /**
+	   * Smartypants Transformations
+	   */
+	
+	  InlineLexer.prototype.smartypants = function (text) {
+	    if (!this.options.smartypants) return text;
+	    return text
+	    // em-dashes
+	    .replace(/---/g, '—')
+	    // en-dashes
+	    .replace(/--/g, '–')
+	    // opening singles
+	    .replace(/(^|[-\u2014/(\[{"\s])'/g, '$1‘')
+	    // closing singles & apostrophes
+	    .replace(/'/g, '’')
+	    // opening doubles
+	    .replace(/(^|[-\u2014/(\[{\u2018\s])"/g, '$1“')
+	    // closing doubles
+	    .replace(/"/g, '”')
+	    // ellipses
+	    .replace(/\.{3}/g, '…');
+	  };
+	
+	  /**
+	   * Mangle Links
+	   */
+	
+	  InlineLexer.prototype.mangle = function (text) {
+	    if (!this.options.mangle) return text;
+	    var out = '',
+	        l = text.length,
+	        i = 0,
+	        ch;
+	
+	    for (; i < l; i++) {
+	      ch = text.charCodeAt(i);
+	      if (Math.random() > 0.5) {
+	        ch = 'x' + ch.toString(16);
+	      }
+	      out += '&#' + ch + ';';
+	    }
+	
+	    return out;
+	  };
+	
+	  /**
+	   * Renderer
+	   */
+	
+	  function Renderer(options) {
+	    this.options = options || {};
+	  }
+	
+	  Renderer.prototype.code = function (code, lang, escaped) {
+	    if (this.options.highlight) {
+	      var out = this.options.highlight(code, lang);
+	      if (out != null && out !== code) {
+	        escaped = true;
+	        code = out;
+	      }
+	    }
+	
+	    if (!lang) {
+	      return '<pre><code>' + (escaped ? code : escape(code, true)) + '\n</code></pre>';
+	    }
+	
+	    return '<pre><code class="' + this.options.langPrefix + escape(lang, true) + '">' + (escaped ? code : escape(code, true)) + '\n</code></pre>\n';
+	  };
+	
+	  Renderer.prototype.blockquote = function (quote) {
+	    return '<blockquote>\n' + quote + '</blockquote>\n';
+	  };
+	
+	  Renderer.prototype.html = function (html) {
+	    return html;
+	  };
+	
+	  Renderer.prototype.heading = function (text, level, raw) {
+	    return '<h' + level + ' id="' + this.options.headerPrefix + raw.toLowerCase().replace(/[^\w]+/g, '-') + '">' + text + '</h' + level + '>\n';
+	  };
+	
+	  Renderer.prototype.hr = function () {
+	    return this.options.xhtml ? '<hr/>\n' : '<hr>\n';
+	  };
+	
+	  Renderer.prototype.list = function (body, ordered) {
+	    var type = ordered ? 'ol' : 'ul';
+	    return '<' + type + '>\n' + body + '</' + type + '>\n';
+	  };
+	
+	  Renderer.prototype.listitem = function (text) {
+	    return '<li>' + text + '</li>\n';
+	  };
+	
+	  Renderer.prototype.paragraph = function (text) {
+	    return '<p>' + text + '</p>\n';
+	  };
+	
+	  Renderer.prototype.table = function (header, body) {
+	    return '<table>\n' + '<thead>\n' + header + '</thead>\n' + '<tbody>\n' + body + '</tbody>\n' + '</table>\n';
+	  };
+	
+	  Renderer.prototype.tablerow = function (content) {
+	    return '<tr>\n' + content + '</tr>\n';
+	  };
+	
+	  Renderer.prototype.tablecell = function (content, flags) {
+	    var type = flags.header ? 'th' : 'td';
+	    var tag = flags.align ? '<' + type + ' style="text-align:' + flags.align + '">' : '<' + type + '>';
+	    return tag + content + '</' + type + '>\n';
+	  };
+	
+	  // span level renderer
+	  Renderer.prototype.strong = function (text) {
+	    return '<strong>' + text + '</strong>';
+	  };
+	
+	  Renderer.prototype.em = function (text) {
+	    return '<em>' + text + '</em>';
+	  };
+	
+	  Renderer.prototype.codespan = function (text) {
+	    return '<code>' + text + '</code>';
+	  };
+	
+	  Renderer.prototype.br = function () {
+	    return this.options.xhtml ? '<br/>' : '<br>';
+	  };
+	
+	  Renderer.prototype.del = function (text) {
+	    return '<del>' + text + '</del>';
+	  };
+	
+	  Renderer.prototype.link = function (href, title, text) {
+	    if (this.options.sanitize) {
+	      try {
+	        var prot = decodeURIComponent(unescape(href)).replace(/[^\w:]/g, '').toLowerCase();
+	      } catch (e) {
+	        return '';
+	      }
+	      if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0) {
+	        return '';
+	      }
+	    }
+	    var out = '<a href="' + href + '"';
+	    if (title) {
+	      out += ' title="' + title + '"';
+	    }
+	    out += '>' + text + '</a>';
+	    return out;
+	  };
+	
+	  Renderer.prototype.image = function (href, title, text) {
+	    var out = '<img src="' + href + '" alt="' + text + '"';
+	    if (title) {
+	      out += ' title="' + title + '"';
+	    }
+	    out += this.options.xhtml ? '/>' : '>';
+	    return out;
+	  };
+	
+	  Renderer.prototype.text = function (text) {
+	    return text;
+	  };
+	
+	  /**
+	   * Parsing & Compiling
+	   */
+	
+	  function Parser(options) {
+	    this.tokens = [];
+	    this.token = null;
+	    this.options = options || marked.defaults;
+	    this.options.renderer = this.options.renderer || new Renderer();
+	    this.renderer = this.options.renderer;
+	    this.renderer.options = this.options;
+	  }
+	
+	  /**
+	   * Static Parse Method
+	   */
+	
+	  Parser.parse = function (src, options, renderer) {
+	    var parser = new Parser(options, renderer);
+	    return parser.parse(src);
+	  };
+	
+	  /**
+	   * Parse Loop
+	   */
+	
+	  Parser.prototype.parse = function (src) {
+	    this.inline = new InlineLexer(src.links, this.options, this.renderer);
+	    this.tokens = src.reverse();
+	
+	    var out = '';
+	    while (this.next()) {
+	      out += this.tok();
+	    }
+	
+	    return out;
+	  };
+	
+	  /**
+	   * Next Token
+	   */
+	
+	  Parser.prototype.next = function () {
+	    return this.token = this.tokens.pop();
+	  };
+	
+	  /**
+	   * Preview Next Token
+	   */
+	
+	  Parser.prototype.peek = function () {
+	    return this.tokens[this.tokens.length - 1] || 0;
+	  };
+	
+	  /**
+	   * Parse Text Tokens
+	   */
+	
+	  Parser.prototype.parseText = function () {
+	    var body = this.token.text;
+	
+	    while (this.peek().type === 'text') {
+	      body += '\n' + this.next().text;
+	    }
+	
+	    return this.inline.output(body);
+	  };
+	
+	  /**
+	   * Parse Current Token
+	   */
+	
+	  Parser.prototype.tok = function () {
+	    switch (this.token.type) {
+	      case 'space':
+	        {
+	          return '';
+	        }
+	      case 'hr':
+	        {
+	          return this.renderer.hr();
+	        }
+	      case 'heading':
+	        {
+	          return this.renderer.heading(this.inline.output(this.token.text), this.token.depth, this.token.text);
+	        }
+	      case 'code':
+	        {
+	          return this.renderer.code(this.token.text, this.token.lang, this.token.escaped);
+	        }
+	      case 'table':
+	        {
+	          var header = '',
+	              body = '',
+	              i,
+	              row,
+	              cell,
+	              flags,
+	              j;
+	
+	          // header
+	          cell = '';
+	          for (i = 0; i < this.token.header.length; i++) {
+	            flags = { header: true, align: this.token.align[i] };
+	            cell += this.renderer.tablecell(this.inline.output(this.token.header[i]), { header: true, align: this.token.align[i] });
+	          }
+	          header += this.renderer.tablerow(cell);
+	
+	          for (i = 0; i < this.token.cells.length; i++) {
+	            row = this.token.cells[i];
+	
+	            cell = '';
+	            for (j = 0; j < row.length; j++) {
+	              cell += this.renderer.tablecell(this.inline.output(row[j]), { header: false, align: this.token.align[j] });
+	            }
+	
+	            body += this.renderer.tablerow(cell);
+	          }
+	          return this.renderer.table(header, body);
+	        }
+	      case 'blockquote_start':
+	        {
+	          var body = '';
+	
+	          while (this.next().type !== 'blockquote_end') {
+	            body += this.tok();
+	          }
+	
+	          return this.renderer.blockquote(body);
+	        }
+	      case 'list_start':
+	        {
+	          var body = '',
+	              ordered = this.token.ordered;
+	
+	          while (this.next().type !== 'list_end') {
+	            body += this.tok();
+	          }
+	
+	          return this.renderer.list(body, ordered);
+	        }
+	      case 'list_item_start':
+	        {
+	          var body = '';
+	
+	          while (this.next().type !== 'list_item_end') {
+	            body += this.token.type === 'text' ? this.parseText() : this.tok();
+	          }
+	
+	          return this.renderer.listitem(body);
+	        }
+	      case 'loose_item_start':
+	        {
+	          var body = '';
+	
+	          while (this.next().type !== 'list_item_end') {
+	            body += this.tok();
+	          }
+	
+	          return this.renderer.listitem(body);
+	        }
+	      case 'html':
+	        {
+	          var html = !this.token.pre && !this.options.pedantic ? this.inline.output(this.token.text) : this.token.text;
+	          return this.renderer.html(html);
+	        }
+	      case 'paragraph':
+	        {
+	          return this.renderer.paragraph(this.inline.output(this.token.text));
+	        }
+	      case 'text':
+	        {
+	          return this.renderer.paragraph(this.parseText());
+	        }
+	    }
+	  };
+	
+	  /**
+	   * Helpers
+	   */
+	
+	  function escape(html, encode) {
+	    return html.replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+	  }
+	
+	  function unescape(html) {
+	    return html.replace(/&([#\w]+);/g, function (_, n) {
+	      n = n.toLowerCase();
+	      if (n === 'colon') return ':';
+	      if (n.charAt(0) === '#') {
+	        return n.charAt(1) === 'x' ? String.fromCharCode(parseInt(n.substring(2), 16)) : String.fromCharCode(+n.substring(1));
+	      }
+	      return '';
+	    });
+	  }
+	
+	  function replace(regex, opt) {
+	    regex = regex.source;
+	    opt = opt || '';
+	    return function self(name, val) {
+	      if (!name) return new RegExp(regex, opt);
+	      val = val.source || val;
+	      val = val.replace(/(^|[^\[])\^/g, '$1');
+	      regex = regex.replace(name, val);
+	      return self;
+	    };
+	  }
+	
+	  function noop() {}
+	  noop.exec = noop;
+	
+	  function merge(obj) {
+	    var i = 1,
+	        target,
+	        key;
+	
+	    for (; i < arguments.length; i++) {
+	      target = arguments[i];
+	      for (key in target) {
+	        if (Object.prototype.hasOwnProperty.call(target, key)) {
+	          obj[key] = target[key];
+	        }
+	      }
+	    }
+	
+	    return obj;
+	  }
+	
+	  /**
+	   * Marked
+	   */
+	
+	  function marked(src, opt, callback) {
+	    if (callback || typeof opt === 'function') {
+	      if (!callback) {
+	        callback = opt;
+	        opt = null;
+	      }
+	
+	      opt = merge({}, marked.defaults, opt || {});
+	
+	      var highlight = opt.highlight,
+	          tokens,
+	          pending,
+	          i = 0;
+	
+	      try {
+	        tokens = Lexer.lex(src, opt);
+	      } catch (e) {
+	        return callback(e);
+	      }
+	
+	      pending = tokens.length;
+	
+	      var done = function done(err) {
+	        if (err) {
+	          opt.highlight = highlight;
+	          return callback(err);
+	        }
+	
+	        var out;
+	
+	        try {
+	          out = Parser.parse(tokens, opt);
+	        } catch (e) {
+	          err = e;
+	        }
+	
+	        opt.highlight = highlight;
+	
+	        return err ? callback(err) : callback(null, out);
+	      };
+	
+	      if (!highlight || highlight.length < 3) {
+	        return done();
+	      }
+	
+	      delete opt.highlight;
+	
+	      if (!pending) return done();
+	
+	      for (; i < tokens.length; i++) {
+	        (function (token) {
+	          if (token.type !== 'code') {
+	            return --pending || done();
+	          }
+	          return highlight(token.text, token.lang, function (err, code) {
+	            if (err) return done(err);
+	            if (code == null || code === token.text) {
+	              return --pending || done();
+	            }
+	            token.text = code;
+	            token.escaped = true;
+	            --pending || done();
+	          });
+	        })(tokens[i]);
+	      }
+	
+	      return;
+	    }
+	    try {
+	      if (opt) opt = merge({}, marked.defaults, opt);
+	      return Parser.parse(Lexer.lex(src, opt), opt);
+	    } catch (e) {
+	      e.message += '\nPlease report this to https://github.com/chjj/marked.';
+	      if ((opt || marked.defaults).silent) {
+	        return '<p>An error occured:</p><pre>' + escape(e.message + '', true) + '</pre>';
+	      }
+	      throw e;
+	    }
+	  }
+	
+	  /**
+	   * Options
+	   */
+	
+	  marked.options = marked.setOptions = function (opt) {
+	    merge(marked.defaults, opt);
+	    return marked;
+	  };
+	
+	  marked.defaults = {
+	    gfm: true,
+	    tables: true,
+	    breaks: false,
+	    pedantic: false,
+	    sanitize: false,
+	    sanitizer: null,
+	    mangle: true,
+	    smartLists: false,
+	    silent: false,
+	    highlight: null,
+	    langPrefix: 'lang-',
+	    smartypants: false,
+	    headerPrefix: '',
+	    renderer: new Renderer(),
+	    xhtml: false
+	  };
+	
+	  /**
+	   * Expose
+	   */
+	
+	  marked.Parser = Parser;
+	  marked.parser = Parser.parse;
+	
+	  marked.Renderer = Renderer;
+	
+	  marked.Lexer = Lexer;
+	  marked.lexer = Lexer.lex;
+	
+	  marked.InlineLexer = InlineLexer;
+	  marked.inlineLexer = InlineLexer.output;
+	
+	  marked.parse = marked;
+	
+	  if (typeof module !== 'undefined' && ( false ? 'undefined' : _typeof(exports)) === 'object') {
+	    module.exports = marked;
+	  } else if (true) {
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	      return marked;
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else {
+	    this.marked = marked;
+	  }
+	}).call(function () {
+	  return this || (typeof window !== 'undefined' ? window : global);
+	}());
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }
 /******/ ]);
