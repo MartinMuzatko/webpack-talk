@@ -1,0 +1,29 @@
+<app>
+    <nav>
+        <a href="#{item}" each={item in items}>{item}</a>
+    </nav>
+    <h1>{name}</h1>
+    <article name="content">
+        <yield>
+    </article>
+    <script>
+        this.items = [
+            'index',
+            'loader',
+            'plugin'
+        ]
+        this.on('mount', () => {
+            riot.route.start(true)
+            riot.route((name) => {
+                if (name == 'index') {
+                    this.content.innerHTML = require(`../../README.md`)
+                } else {
+                    this.content.innerHTML = require(`../../docs/${name}.md`)
+                }
+                this.name = name
+                this.update()
+            })
+            riot.route('index')
+        })
+    </script>
+</app>

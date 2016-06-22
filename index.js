@@ -1,6 +1,9 @@
 import html from './README.md'
+
 import './less/main.less'
+import riot from 'riot'
+import './js/tags/app.html'
 
-document.innerHTML = html
+document.body.innerHTML = `<app>${html}</app>`
 
-var router = require('riot-route')
+riot.mount('*')

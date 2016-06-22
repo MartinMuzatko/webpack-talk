@@ -1,8 +1,11 @@
+var webpack = require('webpack')
+
 module.exports = {
     entry: './index.js',
     output: {
         path: './',
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        sourceMapFilename: "[name].js.map",
     },
     module: {
         preLoaders: [
@@ -15,7 +18,13 @@ module.exports = {
             { test: /\.less$/, loader: 'style!css!less'},
         ]
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            riot: 'riot'
+        })
+    ],
     eslint: {
         configFile: './.eslintrc'
-    }
+    },
+    devtool: 'source-map'
 }
