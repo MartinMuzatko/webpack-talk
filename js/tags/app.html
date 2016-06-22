@@ -1,10 +1,12 @@
 <app>
     <nav>
-        <a href="#{item}" each={item in items}>{item}</a>
+        <a href="#{item}" class={active: name == item} each={item in items}>{item}</a>
     </nav>
-    <h1>{name}</h1>
-    <article name="content">
-        <yield>
+    <article>
+        <h1>{name}</h1>
+        <div name="content">
+            <yield>
+        </div>
     </article>
     <script>
         this.items = [
@@ -15,7 +17,7 @@
         this.on('mount', () => {
             riot.route.start(true)
             riot.route((name) => {
-                if (name == 'index') {
+                if (name == 'index' || !name) {
                     this.content.innerHTML = require(`../../README.md`)
                 } else {
                     this.content.innerHTML = require(`../../docs/${name}.md`)
