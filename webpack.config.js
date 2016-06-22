@@ -1,4 +1,12 @@
 var webpack = require('webpack')
+var prism = require('prismjs')
+var marked = require('marked')
+var renderer = new marked.Renderer()
+renderer.code = (code, language) => {
+    var html = prism.highlight(code, prism.languages.javascript)
+    return `<pre class="language-${language}"><code class="language-${language}">${html}</code></pre>`
+}
+
 
 module.exports = {
     entry: './index.js',
@@ -17,6 +25,9 @@ module.exports = {
             { test: /\.html$|\.js$/, loader: 'babel', query: { presets: 'es2015-riot' }},
             { test: /\.less$/, loader: 'style!css!less'},
         ]
+    },
+    markdownLoader: {
+        renderer: renderer
     },
     plugins: [
         new webpack.ProvidePlugin({
