@@ -1,13 +1,12 @@
 # Intro to frontend automation
 
 Webpack can do a lot of stuff.
-Not only does webpack **transpile**, **compile**, **preprocess** your modules and bundle them, it can also help you to code more accurately and also faster.
+Not only does webpack **transpile**, **compile** and **preprocess** your source and then bundle them. It is also capable of helping you to code more accurately and also faster with **Linting**, **Sourcemaps** and **Dev Server**.
 
 ## How does one tool do all that?
 
-If you are familiar with node and npm,
+![webpack](https://webpack.github.io/assets/what-is-webpack.png)
 
-So what does webpack take care of?
 
 ### Preprocessing/Transpiling
 - JS
