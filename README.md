@@ -8,7 +8,7 @@ Not only does webpack **transpile**, **compile** and **preprocess** your source 
 ![webpack](https://webpack.github.io/assets/what-is-webpack.png)
 
 
-### Preprocessing/Transpiling
+### Preprocessing/Transpiling/Templating
 - JS
     - Coffeescript
     - Typescript
@@ -17,6 +17,15 @@ Not only does webpack **transpile**, **compile** and **preprocess** your source 
     - Less
     - Sass/Scss
     - Stylus
+    - Postcss (Autoprefixer)
+- HTML
+    - Yade
+    - HAML
+    - Mustache/Handlebars
+    - Smarty
+    - Markdown
+    - Riot
+
 
 ### Dependency management
 - require('marked')
@@ -32,17 +41,12 @@ Not only does webpack **transpile**, **compile** and **preprocess** your source 
 - Linting
 
 ### Bundling
-        Bundling everything together into one distributable file (or folder)
+Webpack bundles all dynamic assets together into one distributable file. Or, if you want to, you can split the app in more than one part.
 
-Dependency management
+### Dependency management
     What is a Module (Anything really - js/html/css/md, etc)
     Loading modules - Webpack loader chains (style!css!less)
         Formats
         Preloaders, Postloaders
     Plugins extend loaders ()
     JS module formats
-
-
-Bonus Slides/Material:
-    Comparing existing tools
-    Q&A
