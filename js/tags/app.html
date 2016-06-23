@@ -4,11 +4,19 @@
         <a href="#{item}" class={active: name == item} each={item in items}>{item}</a>
     </nav>
     <article>
-        <h1>{name}</h1>
+        <h1> {name}</h1>
         <div name="content">
             <yield>
         </div>
     </article>
+    <footer>
+        <div>
+            <p>
+                Coded with <span style="color: red">♥</span> by
+                <a href="https://github.com/MartinMuzatko">@MartinMuzatko</a>
+            </p>
+        </div>
+    </footer>
     <script>
         this.items = [
             'index',
