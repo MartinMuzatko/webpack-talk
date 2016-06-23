@@ -1,0 +1,30 @@
+<loader>
+    <code><pre name="code">
+    </pre></code>
+    <div name="legend">
+
+    </div>
+    <div name="yield"><yield></div>
+    <script>
+    this.json = this.yield.innerHTML
+
+    this.on('mount', () => {
+        this.prism = require('prismjs')
+        this.code.innerHTML = this.prism.highlight(this.json, this.prism.languages.js)
+        this.yield.hidden = true
+    })
+
+    this.toJSON = (json) => {
+        var jsonString = json
+          // wrap keys without quote with valid double quote
+          .replace(/([\$\w]+)\s*:/g, (_, $1) => {return '"'+$1+'":'})
+          // wrap non string values
+          .replace(/(\/.+\/)/g, (_, $1) => {return '"'+$1+'":'})
+          // replacing single quote wrapped ones to double quote
+          .replace(/'([^']+)'/g, (_, $1) => {return '"'+$1+'"'})
+
+        return JSON.parse(jsonString)
+    }
+
+    </script>
+</loader>

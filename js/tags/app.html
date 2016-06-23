@@ -25,7 +25,7 @@
                     this.content.innerHTML = require(`../../docs/${name}.md`)
                 }
                 this.name = name
-                riot.mount('test, xs')
+                riot.mount('loader, xs')
                 this.update()
             })
             riot.route('index')
