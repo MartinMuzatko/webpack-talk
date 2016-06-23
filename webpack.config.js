@@ -1,6 +1,12 @@
 var webpack = require('webpack')
 var prism = require('prismjs')
 var marked = require('marked')
+var autoprefixer = require('autoprefixer')
+var colorRgbaFallback = require("postcss-color-rgba-fallback")
+
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+
 var renderer = new marked.Renderer()
 renderer.code = (code, language) => {
     var html = prism.highlight(code, prism.languages.javascript)
@@ -22,17 +28,33 @@ module.exports = {
         ],
         loaders: [
             { test: /\.md$/, loader: 'html!markdown'},
+            { test: /\.(jpe?g|png|gif|svg|mp4)$/i, loader: 'file'},
             { test: /\.html$|\.js$/, loader: 'babel', query: { presets: 'es2015-riot' }},
-            { test: /\.less$/, loader: 'style!css!less'},
+            { test: /\.less$/, loader: 'style!css?minimize!postcss!less'},
         ]
     },
     markdownLoader: {
         renderer: renderer
     },
+    postcss: () => {
+        return [
+            autoprefixer({browsers: 'last 2 versions'})
+        ];
+    },
     plugins: [
         new webpack.ProvidePlugin({
             riot: 'riot'
-        })
+        }),
+        new BrowserSyncPlugin(
+            {
+                host: 'localhost',
+                port: 8081,
+                proxy: 'http://localhost:8080/'
+            },
+            {
+                reload: true
+            }
+        )
     ],
     eslint: {
         configFile: './.eslintrc'
