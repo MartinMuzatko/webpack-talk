@@ -46,19 +46,21 @@
 
 	'use strict';
 	
-	var _README = __webpack_require__(4);
+	var _README = __webpack_require__(11);
 	
 	var _README2 = _interopRequireDefault(_README);
 	
-	__webpack_require__(5);
+	__webpack_require__(12);
 	
-	var _riot = __webpack_require__(9);
+	var _riot = __webpack_require__(16);
 	
 	var _riot2 = _interopRequireDefault(_riot);
 	
-	__webpack_require__(12);
+	__webpack_require__(19);
 	
-	var _marked = __webpack_require__(17);
+	__webpack_require__(24);
+	
+	var _marked = __webpack_require__(26);
 	
 	var _marked2 = _interopRequireDefault(_marked);
 	
@@ -74,29 +76,36 @@
 /* 1 */,
 /* 2 */,
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1 id=\"intro-to-frontend-automation\">Intro to frontend automation</h1>\n<p>Webpack can do a lot of stuff.\nNot only does webpack <strong>transpile</strong>, <strong>compile</strong>, <strong>preprocess</strong> your modules and bundle them, it can also help you to code more accurately and also faster.</p>\n<h2 id=\"how-does-one-tool-do-all-that-\">How does one tool do all that?</h2>\n<p>If you are familiar with node and npm,</p>\n<p>So what does webpack take care of?</p>\n<h3 id=\"preprocessing-transpiling\">Preprocessing/Transpiling</h3>\n<ul>\n<li>JS<ul>\n<li>Coffeescript</li>\n<li>Typescript</li>\n<li>Babel (ES6)</li>\n</ul>\n</li>\n<li>CSS<ul>\n<li>Less</li>\n<li>Sass/Scss</li>\n<li>Stylus</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"dependency-management\">Dependency management</h3>\n<ul>\n<li>require(&#39;marked&#39;)</li>\n<li>import marked from &#39;marked&#39;</li>\n</ul>\n<h3 id=\"optimizing\">Optimizing</h3>\n<ul>\n<li>minify</li>\n<li>fallback (rgba &gt; hex)</li>\n</ul>\n<h3 id=\"tools\">Tools</h3>\n<ul>\n<li>Sourcemaps</li>\n<li>Devserver - Auto reload</li>\n<li>Linting</li>\n</ul>\n<h3 id=\"bundling\">Bundling</h3>\n<pre class=\"language-undefined\"><code class=\"language-undefined\">    Bundling everything together into one distributable file <span class=\"token punctuation\" >(</span>or folder<span class=\"token punctuation\" >)</span></code></pre><p>Dependency management\n    What is a Module (Anything really - js/html/css/md, etc)\n    Loading modules - Webpack loader chains (style!css!less)\n        Formats\n        Preloaders, Postloaders\n    Plugins extend loaders ()\n    JS module formats</p>\n<p>Bonus Slides/Material:\n    Comparing existing tools\n    Q&amp;A</p>\n";
+	module.exports = "<h1 id=\"intro-to-frontend-automation\">Intro to frontend automation</h1>\n<p>Webpack can do a lot of stuff.\nNot only does webpack <strong>transpile</strong>, <strong>compile</strong> and <strong>preprocess</strong> your source and then bundle them. It is also capable of helping you to code more accurately and also faster with <strong>Linting</strong>, <strong>Sourcemaps</strong> and <strong>Dev Server</strong>.</p>\n<h2 id=\"how-does-one-tool-do-all-that-\">How does one tool do all that?</h2>\n<p><img src=\"https://webpack.github.io/assets/what-is-webpack.png\" alt=\"webpack\"></p>\n<h3 id=\"preprocessing-transpiling-templating\">Preprocessing/Transpiling/Templating</h3>\n<ul>\n<li>JS<ul>\n<li>Coffeescript</li>\n<li>Typescript</li>\n<li>Babel (ES6)</li>\n</ul>\n</li>\n<li>CSS<ul>\n<li>Less</li>\n<li>Sass/Scss</li>\n<li>Stylus</li>\n<li>Postcss (Autoprefixer)</li>\n</ul>\n</li>\n<li>HTML<ul>\n<li>Yade</li>\n<li>HAML</li>\n<li>Mustache/Handlebars</li>\n<li>Smarty</li>\n<li>Markdown</li>\n<li>Riot</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"dependency-management\">Dependency management</h3>\n<ul>\n<li>require(&#39;marked&#39;)</li>\n<li>import marked from &#39;marked&#39;</li>\n</ul>\n<h3 id=\"optimizing\">Optimizing</h3>\n<ul>\n<li>minify</li>\n<li>fallback (rgba &gt; hex)</li>\n</ul>\n<h3 id=\"tools\">Tools</h3>\n<ul>\n<li>Sourcemaps</li>\n<li>Devserver - Auto reload</li>\n<li>Linting</li>\n</ul>\n<h3 id=\"bundling\">Bundling</h3>\n<p>Webpack bundles all dynamic assets together into one distributable file. Or, if you want to, you can split the app in more than one part.</p>\n<h3 id=\"dependency-management\">Dependency management</h3>\n<pre class=\"language-undefined\"><code class=\"language-undefined\">What is a Module <span class=\"token punctuation\" >(</span>Anything really <span class=\"token operator\" >-</span> js<span class=\"token operator\" >/</span>html<span class=\"token operator\" >/</span>css<span class=\"token operator\" >/</span>md<span class=\"token punctuation\" >,</span> etc<span class=\"token punctuation\" >)</span>\nLoading modules <span class=\"token operator\" >-</span> Webpack loader chains <span class=\"token punctuation\" >(</span>style<span class=\"token operator\" >!</span>css<span class=\"token operator\" >!</span>less<span class=\"token punctuation\" >)</span>\n    Formats\n    Preloaders<span class=\"token punctuation\" >,</span> Postloaders\nPlugins extend loaders <span class=\"token punctuation\" >(</span><span class=\"token punctuation\" >)</span>\nJS module formats</code></pre>";
 
 /***/ },
-/* 5 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(6);
+	var content = __webpack_require__(13);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(15)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/less-loader/index.js!./main.less", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/less-loader/index.js!./main.less");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?minimize!./../node_modules/postcss-loader/index.js!./../node_modules/less-loader/index.js!./main.less", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?minimize!./../node_modules/postcss-loader/index.js!./../node_modules/less-loader/index.js!./main.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -106,21 +115,22 @@
 	}
 
 /***/ },
-/* 6 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(14)();
 	// imports
-	
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Cousine);", ""]);
+	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Marvel:400,700);", ""]);
 	
 	// module
-	exports.push([module.id, "/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */\n/**\n * 1. Change the default font family in all browsers (opinionated).\n * 2. Prevent adjustments of font size after orientation changes in IE and iOS.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */\n}\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0;\n}\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n * 2. Add the correct display in IE.\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block;\n}\n/**\n * Add the correct display in IE 9-.\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline;\n}\n/**\n * Add the correct display in IE 10-.\n * 1. Add the correct display in IE.\n */\ntemplate,\n[hidden] {\n  display: none;\n}\n/* Links\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */\n}\n/**\n * Remove the outline on focused links when they are also active or hovered\n * in all browsers (opinionated).\n */\na:active,\na:hover {\n  outline-width: 0;\n}\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the bottom border in Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */\n}\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit;\n}\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder;\n}\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic;\n}\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%;\n}\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -0.25em;\n}\nsup {\n  top: -0.5em;\n}\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none;\n}\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden;\n}\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */\n}\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px;\n}\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */\n}\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change font properties to `inherit` in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\nselect,\ntextarea {\n  font: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */\n}\n/**\n * Restore the font weight unset by the previous rule.\n */\noptgroup {\n  font-weight: bold;\n}\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible;\n}\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none;\n}\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n}\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n/**\n * Change the border, margin, and padding in all browsers (opinionated).\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em;\n}\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */\n}\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto;\n}\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */\n}\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n}\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n/**\n * Correct the text style of placeholders in Chrome, Edge, and Safari.\n */\n::-webkit-input-placeholder {\n  color: inherit;\n  opacity: 0.54;\n}\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n}\n/**\n * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML\n * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);\n * @author Tim  Shedor\n */\ncode[class*=\"language-\"],\npre[class*=\"language-\"] {\n  color: black;\n  background: none;\n  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;\n  text-align: left;\n  white-space: pre;\n  word-spacing: normal;\n  word-break: normal;\n  word-wrap: normal;\n  line-height: 1.5;\n  -moz-tab-size: 4;\n  -o-tab-size: 4;\n  tab-size: 4;\n  -webkit-hyphens: none;\n  -moz-hyphens: none;\n  -ms-hyphens: none;\n  hyphens: none;\n}\n/* Code blocks */\npre[class*=\"language-\"] {\n  position: relative;\n  margin: .5em 0;\n  -webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;\n  -moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;\n  box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;\n  border-left: 10px solid #358ccb;\n  background-color: #fdfdfd;\n  background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);\n  background-size: 3em 3em;\n  background-origin: content-box;\n  overflow: visible;\n  padding: 0;\n}\ncode[class*=\"language\"] {\n  max-height: inherit;\n  height: 100%;\n  padding: 0 1em;\n  display: block;\n  overflow: auto;\n}\n/* Margin bottom to accomodate shadow */\n:not(pre) > code[class*=\"language-\"],\npre[class*=\"language-\"] {\n  background-color: #fdfdfd;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  margin-bottom: 1em;\n}\n/* Inline code */\n:not(pre) > code[class*=\"language-\"] {\n  position: relative;\n  padding: .2em;\n  -webkit-border-radius: 0.3em;\n  -moz-border-radius: 0.3em;\n  -ms-border-radius: 0.3em;\n  -o-border-radius: 0.3em;\n  border-radius: 0.3em;\n  color: #c92c2c;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  display: inline;\n  white-space: normal;\n}\npre[class*=\"language-\"]:before,\npre[class*=\"language-\"]:after {\n  content: '';\n  z-index: -2;\n  display: block;\n  position: absolute;\n  bottom: 0.75em;\n  left: 0.18em;\n  width: 40%;\n  height: 20%;\n  max-height: 13em;\n  -webkit-box-shadow: 0px 13px 8px #979797;\n  -moz-box-shadow: 0px 13px 8px #979797;\n  box-shadow: 0px 13px 8px #979797;\n  -webkit-transform: rotate(-2deg);\n  -moz-transform: rotate(-2deg);\n  -ms-transform: rotate(-2deg);\n  -o-transform: rotate(-2deg);\n  transform: rotate(-2deg);\n}\n:not(pre) > code[class*=\"language-\"]:after,\npre[class*=\"language-\"]:after {\n  right: 0.75em;\n  left: auto;\n  -webkit-transform: rotate(2deg);\n  -moz-transform: rotate(2deg);\n  -ms-transform: rotate(2deg);\n  -o-transform: rotate(2deg);\n  transform: rotate(2deg);\n}\n.token.comment,\n.token.block-comment,\n.token.prolog,\n.token.doctype,\n.token.cdata {\n  color: #7D8B99;\n}\n.token.punctuation {\n  color: #5F6364;\n}\n.token.property,\n.token.tag,\n.token.boolean,\n.token.number,\n.token.function-name,\n.token.constant,\n.token.symbol,\n.token.deleted {\n  color: #c92c2c;\n}\n.token.selector,\n.token.attr-name,\n.token.string,\n.token.char,\n.token.function,\n.token.builtin,\n.token.inserted {\n  color: #2f9c0a;\n}\n.token.operator,\n.token.entity,\n.token.url,\n.token.variable {\n  color: #a67f59;\n  background: rgba(255, 255, 255, 0.5);\n}\n.token.atrule,\n.token.attr-value,\n.token.keyword,\n.token.class-name {\n  color: #1990b8;\n}\n.token.regex,\n.token.important {\n  color: #e90;\n}\n.language-css .token.string,\n.style .token.string {\n  color: #a67f59;\n  background: rgba(255, 255, 255, 0.5);\n}\n.token.important {\n  font-weight: normal;\n}\n.token.bold {\n  font-weight: bold;\n}\n.token.italic {\n  font-style: italic;\n}\n.token.entity {\n  cursor: help;\n}\n.namespace {\n  opacity: .7;\n}\n@media screen and (max-width: 767px) {\n  pre[class*=\"language-\"]:before,\n  pre[class*=\"language-\"]:after {\n    bottom: 14px;\n    -webkit-box-shadow: none;\n    -moz-box-shadow: none;\n    box-shadow: none;\n  }\n}\n/* Plugin styles */\n.token.tab:not(:empty):before,\n.token.cr:before,\n.token.lf:before {\n  color: #e0d7d1;\n}\n/* Plugin styles: Line Numbers */\npre[class*=\"language-\"].line-numbers {\n  padding-left: 0;\n}\npre[class*=\"language-\"].line-numbers code {\n  padding-left: 3.8em;\n}\npre[class*=\"language-\"].line-numbers .line-numbers-rows {\n  left: 0;\n}\n/* Plugin styles: Line Highlight */\npre[class*=\"language-\"][data-line] {\n  padding-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n}\npre[data-line] code {\n  position: relative;\n  padding-left: 4em;\n}\npre .line-highlight {\n  margin-top: 0;\n}\n/*  ========================================\n    COLORS\n    ======================================== */\npre[class*=\"language-\"]:before,\npre[class*=\"language-\"]:after {\n  content: initial;\n}\nbody {\n  background: #FFF;\n}\n.github-corner {\n  position: fixed;\n  right: 0;\n  z-index: 100;\n}\n* {\n  box-sizing: border-box;\n}\nnav {\n  background: #2e8ab8;\n  position: fixed;\n  width: 100%;\n  box-shadow: inset 0 -0.33em 0 rgba(59, 72, 79, 0.2);\n}\nnav a {\n  transition: all .5s ease;\n  text-decoration: none;\n  color: #FFF;\n  padding: 1em 2em;\n  display: inline-block;\n}\nnav a:hover,\nnav a.active {\n  background: #FFF;\n  color: #2e8ab8;\n}\narticle {\n  padding: 1em;\n  padding-top: 4em;\n}\narticle > h1 {\n  font-size: 1.2rem;\n  padding: 0 0 1em;\n  border-bottom: 1px solid #2e8ab8;\n  text-transform: uppercase;\n  font-weight: 400;\n}\narticle > h1:before {\n  content: '// ';\n  color: #2e8ab8;\n}\n", ""]);
+	exports.push([module.id, "/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}code[class*=language-],pre[class*=language-]{color:#000;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{position:relative;margin:.5em 0;box-shadow:-1px 0 0 0 #358ccb,0 0 0 1px #dfdfdf;border-left:10px solid #358ccb;background-color:#fdfdfd;background-image:linear-gradient(transparent 50%,rgba(69,142,209,.04) 0);background-size:3em 3em;background-origin:content-box;overflow:visible;padding:0}code[class*=language]{max-height:inherit;height:100%;padding:0 1em;display:block;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background-color:#fdfdfd;box-sizing:border-box;margin-bottom:1em}:not(pre)>code[class*=language-]{position:relative;padding:.2em;border-radius:.3em;color:#c92c2c;border:1px solid rgba(0,0,0,.1);display:inline;white-space:normal}pre[class*=language-]:after,pre[class*=language-]:before{content:'';z-index:-2;display:block;position:absolute;bottom:.75em;left:.18em;width:40%;height:20%;max-height:13em;box-shadow:0 13px 8px #979797;transform:rotate(-2deg)}:not(pre)>code[class*=language-]:after,pre[class*=language-]:after{right:.75em;left:auto;transform:rotate(2deg)}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#7d8b99}.token.punctuation{color:#5f6364}.token.boolean,.token.constant,.token.deleted,.token.function-name,.token.number,.token.property,.token.symbol,.token.tag{color:#c92c2c}.token.attr-name,.token.builtin,.token.char,.token.function,.token.inserted,.token.selector,.token.string{color:#2f9c0a}.token.entity,.token.operator,.token.url,.token.variable{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.class-name,.token.keyword{color:#1990b8}.token.important,.token.regex{color:#e90}.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.important{font-weight:400}.token.bold{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.namespace{opacity:.7}@media screen and (max-width:767px){pre[class*=language-]:after,pre[class*=language-]:before{bottom:14px;box-shadow:none}}.token.cr:before,.token.lf:before,.token.tab:not(:empty):before{color:#e0d7d1}pre[class*=language-].line-numbers{padding-left:0}pre[class*=language-].line-numbers code{padding-left:3.8em}pre[class*=language-].line-numbers .line-numbers-rows{left:0}pre[class*=language-][data-line]{padding-top:0;padding-bottom:0;padding-left:0}pre[data-line] code{position:relative;padding-left:4em}pre .line-highlight{margin-top:0}[flex-offset=\"0\"]{margin-left:0}[flex-offset=\"5\"]{margin-left:5%}[flex-offset=\"10\"]{margin-left:10%}[flex-offset=\"15\"]{margin-left:15%}[flex-offset=\"20\"]{margin-left:20%}[flex-offset=\"25\"]{margin-left:25%}[flex-offset=\"30\"]{margin-left:30%}[flex-offset=\"35\"]{margin-left:35%}[flex-offset=\"40\"]{margin-left:40%}[flex-offset=\"45\"]{margin-left:45%}[flex-offset=\"50\"]{margin-left:50%}[flex-offset=\"55\"]{margin-left:55%}[flex-offset=\"60\"]{margin-left:60%}[flex-offset=\"65\"]{margin-left:65%}[flex-offset=\"70\"]{margin-left:70%}[flex-offset=\"75\"]{margin-left:75%}[flex-offset=\"80\"]{margin-left:80%}[flex-offset=\"85\"]{margin-left:85%}[flex-offset=\"90\"]{margin-left:90%}[flex-offset=\"95\"]{margin-left:95%}[flex-offset=\"33\"]{margin-left:33.33333%}[flex-offset=\"66\"]{margin-left:66.66667%}[flex-order=\"0\"]{-ms-flex-order:0;order:0}[flex-order=\"1\"]{-ms-flex-order:1;order:1}[flex-order=\"2\"]{-ms-flex-order:2;order:2}[flex-order=\"3\"]{-ms-flex-order:3;order:3}[flex-order=\"4\"]{-ms-flex-order:4;order:4}[flex-order=\"5\"]{-ms-flex-order:5;order:5}[flex-order=\"6\"]{-ms-flex-order:6;order:6}[flex-order=\"7\"]{-ms-flex-order:7;order:7}[flex-order=\"8\"]{-ms-flex-order:8;order:8}[flex-order=\"9\"]{-ms-flex-order:9;order:9}[flex-order=\"10\"]{-ms-flex-order:10;order:10}[flex-order=\"11\"]{-ms-flex-order:11;order:11}[flex-order=\"12\"]{-ms-flex-order:12;order:12}[flex-order=\"13\"]{-ms-flex-order:13;order:13}[flex-order=\"14\"]{-ms-flex-order:14;order:14}[flex-order=\"15\"]{-ms-flex-order:15;order:15}[flex-order=\"16\"]{-ms-flex-order:16;order:16}[flex-order=\"17\"]{-ms-flex-order:17;order:17}[flex-order=\"18\"]{-ms-flex-order:18;order:18}[flex-order=\"19\"]{-ms-flex-order:19;order:19}[flex-order=\"20\"]{-ms-flex-order:20;order:20}[layout]{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[layout]>*{box-sizing:border-box}[layout=column]{-ms-flex-direction:column;flex-direction:column}[layout=row]{-ms-flex-direction:row;flex-direction:row}[layout-align]{-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch}[layout-align^=start]{-ms-flex-pack:start;justify-content:flex-start}[layout-align^=center]{-ms-flex-pack:center;justify-content:center}[layout-align^=end]{-ms-flex-pack:end;justify-content:flex-end}[layout-align^=space-around]{-ms-flex-pack:distribute;justify-content:space-around}[layout-align^=space-between]{-ms-flex-pack:justify;justify-content:space-between}[layout-align$=start]{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}[layout-align$=center]{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;max-width:100%}[layout-align$=center]>*{max-width:100%}[layout-align$=end]{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;-ms-flex-line-pack:end;align-content:flex-end}[layout-align=center],[layout-align=end],[layout-align=space-around],[layout-align=space-between],[layout-align=start]{-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch;-ms-flex-line-pack:stretch;align-content:stretch}[flex]{-ms-flex:1;flex:1}[flex-start]{margin-bottom:auto}[flex-end]{margin-top:auto}[flex-none]{-ms-flex:0 0 auto;flex:0 0 auto}[flex-initial]{-ms-flex:0 1 auto;flex:0 1 auto}[flex-noshrink]{-ms-flex:1 0 auto;flex:1 0 auto}[flex-auto]{-ms-flex:1 1 auto;flex:1 1 auto}[flex-grow]{-ms-flex:1 1 100%;flex:1 1 100%}[flex],[layout=row]>[flex]{max-height:100%}[layout=column]>[flex]{max-width:100%}[layout=row]>[flex=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-width:5%}[layout=column]>[flex=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-height:5%}[layout=row]>[flex=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-width:10%}[layout=column]>[flex=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-height:10%}[layout=row]>[flex=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-width:15%}[layout=column]>[flex=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-height:15%}[layout=row]>[flex=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-width:20%}[layout=column]>[flex=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-height:20%}[layout=row]>[flex=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-width:25%}[layout=column]>[flex=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-height:25%}[layout=row]>[flex=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-width:30%}[layout=column]>[flex=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-height:30%}[layout=row]>[flex=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-width:35%}[layout=column]>[flex=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-height:35%}[layout=row]>[flex=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-width:40%}[layout=column]>[flex=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-height:40%}[layout=row]>[flex=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-width:45%}[layout=column]>[flex=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-height:45%}[layout=row]>[flex=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%}[layout=column]>[flex=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-height:50%}[layout=row]>[flex=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-width:55%}[layout=column]>[flex=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-height:55%}[layout=row]>[flex=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-width:60%}[layout=column]>[flex=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-height:60%}[layout=row]>[flex=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-width:65%}[layout=column]>[flex=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-height:65%}[layout=row]>[flex=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-width:70%}[layout=column]>[flex=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-height:70%}[layout=row]>[flex=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-width:75%}[layout=column]>[flex=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-height:75%}[layout=row]>[flex=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-width:80%}[layout=column]>[flex=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-height:80%}[layout=row]>[flex=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-width:85%}[layout=column]>[flex=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-height:85%}[layout=row]>[flex=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-width:90%}[layout=column]>[flex=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-height:90%}[layout=row]>[flex=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-width:95%}[layout=column]>[flex=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-height:95%}[layout=row]>[flex=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%}[layout=column]>[flex=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-height:100%}[layout=row]>[flex=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-width:33.33%}[layout=column]>[flex=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-height:33.33%}[layout=row]>[flex=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-width:66.66%}[layout=column]>[flex=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-height:66.66%}[hide]{display:none}@media (max-width:599px){[flex-offset-sm=\"0\"]{margin-left:0}[flex-offset-sm=\"5\"]{margin-left:5%}[flex-offset-sm=\"10\"]{margin-left:10%}[flex-offset-sm=\"15\"]{margin-left:15%}[flex-offset-sm=\"20\"]{margin-left:20%}[flex-offset-sm=\"25\"]{margin-left:25%}[flex-offset-sm=\"30\"]{margin-left:30%}[flex-offset-sm=\"35\"]{margin-left:35%}[flex-offset-sm=\"40\"]{margin-left:40%}[flex-offset-sm=\"45\"]{margin-left:45%}[flex-offset-sm=\"50\"]{margin-left:50%}[flex-offset-sm=\"55\"]{margin-left:55%}[flex-offset-sm=\"60\"]{margin-left:60%}[flex-offset-sm=\"65\"]{margin-left:65%}[flex-offset-sm=\"70\"]{margin-left:70%}[flex-offset-sm=\"75\"]{margin-left:75%}[flex-offset-sm=\"80\"]{margin-left:80%}[flex-offset-sm=\"85\"]{margin-left:85%}[flex-offset-sm=\"90\"]{margin-left:90%}[flex-offset-sm=\"95\"]{margin-left:95%}[flex-offset-sm=\"33\"]{margin-left:33.33333%}[flex-offset-sm=\"66\"]{margin-left:66.66667%}[flex-order-sm=\"0\"]{-ms-flex-order:0;order:0}[flex-order-sm=\"1\"]{-ms-flex-order:1;order:1}[flex-order-sm=\"2\"]{-ms-flex-order:2;order:2}[flex-order-sm=\"3\"]{-ms-flex-order:3;order:3}[flex-order-sm=\"4\"]{-ms-flex-order:4;order:4}[flex-order-sm=\"5\"]{-ms-flex-order:5;order:5}[flex-order-sm=\"6\"]{-ms-flex-order:6;order:6}[flex-order-sm=\"7\"]{-ms-flex-order:7;order:7}[flex-order-sm=\"8\"]{-ms-flex-order:8;order:8}[flex-order-sm=\"9\"]{-ms-flex-order:9;order:9}[flex-order-sm=\"10\"]{-ms-flex-order:10;order:10}[flex-order-sm=\"11\"]{-ms-flex-order:11;order:11}[flex-order-sm=\"12\"]{-ms-flex-order:12;order:12}[flex-order-sm=\"13\"]{-ms-flex-order:13;order:13}[flex-order-sm=\"14\"]{-ms-flex-order:14;order:14}[flex-order-sm=\"15\"]{-ms-flex-order:15;order:15}[flex-order-sm=\"16\"]{-ms-flex-order:16;order:16}[flex-order-sm=\"17\"]{-ms-flex-order:17;order:17}[flex-order-sm=\"18\"]{-ms-flex-order:18;order:18}[flex-order-sm=\"19\"]{-ms-flex-order:19;order:19}[flex-order-sm=\"20\"]{-ms-flex-order:20;order:20}[layout-sm]{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[layout-sm]>*{box-sizing:border-box}[layout-sm=column]{-ms-flex-direction:column;flex-direction:column}[layout-sm=row]{-ms-flex-direction:row;flex-direction:row}[layout-align-sm]{-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch}[layout-align-sm^=start]{-ms-flex-pack:start;justify-content:flex-start}[layout-align-sm^=center]{-ms-flex-pack:center;justify-content:center}[layout-align-sm^=end]{-ms-flex-pack:end;justify-content:flex-end}[layout-align-sm^=space-around]{-ms-flex-pack:distribute;justify-content:space-around}[layout-align-sm^=space-between]{-ms-flex-pack:justify;justify-content:space-between}[layout-align-sm$=start]{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}[layout-align-sm$=center]{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;max-width:100%}[layout-align-sm$=center]>*{max-width:100%}[layout-align-sm$=end]{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;-ms-flex-line-pack:end;align-content:flex-end}[layout-align-sm=center],[layout-align-sm=end],[layout-align-sm=space-around],[layout-align-sm=space-between],[layout-align-sm=start]{-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch;-ms-flex-line-pack:stretch;align-content:stretch}[flex-sm]{-ms-flex:1;flex:1}[flex-sm-start]{margin-bottom:auto}[flex-sm-end]{margin-top:auto}[flex-sm-none]{-ms-flex:0 0 auto;flex:0 0 auto}[flex-sm-initial]{-ms-flex:0 1 auto;flex:0 1 auto}[flex-sm-noshrink]{-ms-flex:1 0 auto;flex:1 0 auto}[flex-sm-auto]{-ms-flex:1 1 auto;flex:1 1 auto}[flex-sm-grow]{-ms-flex:1 1 100%;flex:1 1 100%}[flex-sm],[layout-sm=row]>[flex-sm],[layout=row]>[flex-sm]{max-height:100%}[layout-sm=column]>[flex-sm],[layout=column]>[flex-sm]{max-width:100%}[layout-sm=row]>[flex-sm=\"5\"],[layout-sm=row]>[flex=\"5\"],[layout=row]>[flex-sm=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-width:5%}[layout-sm=column]>[flex-sm=\"5\"],[layout-sm=column]>[flex=\"5\"],[layout=column]>[flex-sm=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-height:5%}[layout-sm=row]>[flex-sm=\"10\"],[layout-sm=row]>[flex=\"10\"],[layout=row]>[flex-sm=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-width:10%}[layout-sm=column]>[flex-sm=\"10\"],[layout-sm=column]>[flex=\"10\"],[layout=column]>[flex-sm=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-height:10%}[layout-sm=row]>[flex-sm=\"15\"],[layout-sm=row]>[flex=\"15\"],[layout=row]>[flex-sm=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-width:15%}[layout-sm=column]>[flex-sm=\"15\"],[layout-sm=column]>[flex=\"15\"],[layout=column]>[flex-sm=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-height:15%}[layout-sm=row]>[flex-sm=\"20\"],[layout-sm=row]>[flex=\"20\"],[layout=row]>[flex-sm=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-width:20%}[layout-sm=column]>[flex-sm=\"20\"],[layout-sm=column]>[flex=\"20\"],[layout=column]>[flex-sm=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-height:20%}[layout-sm=row]>[flex-sm=\"25\"],[layout-sm=row]>[flex=\"25\"],[layout=row]>[flex-sm=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-width:25%}[layout-sm=column]>[flex-sm=\"25\"],[layout-sm=column]>[flex=\"25\"],[layout=column]>[flex-sm=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-height:25%}[layout-sm=row]>[flex-sm=\"30\"],[layout-sm=row]>[flex=\"30\"],[layout=row]>[flex-sm=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-width:30%}[layout-sm=column]>[flex-sm=\"30\"],[layout-sm=column]>[flex=\"30\"],[layout=column]>[flex-sm=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-height:30%}[layout-sm=row]>[flex-sm=\"35\"],[layout-sm=row]>[flex=\"35\"],[layout=row]>[flex-sm=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-width:35%}[layout-sm=column]>[flex-sm=\"35\"],[layout-sm=column]>[flex=\"35\"],[layout=column]>[flex-sm=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-height:35%}[layout-sm=row]>[flex-sm=\"40\"],[layout-sm=row]>[flex=\"40\"],[layout=row]>[flex-sm=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-width:40%}[layout-sm=column]>[flex-sm=\"40\"],[layout-sm=column]>[flex=\"40\"],[layout=column]>[flex-sm=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-height:40%}[layout-sm=row]>[flex-sm=\"45\"],[layout-sm=row]>[flex=\"45\"],[layout=row]>[flex-sm=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-width:45%}[layout-sm=column]>[flex-sm=\"45\"],[layout-sm=column]>[flex=\"45\"],[layout=column]>[flex-sm=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-height:45%}[layout-sm=row]>[flex-sm=\"50\"],[layout-sm=row]>[flex=\"50\"],[layout=row]>[flex-sm=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%}[layout-sm=column]>[flex-sm=\"50\"],[layout-sm=column]>[flex=\"50\"],[layout=column]>[flex-sm=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-height:50%}[layout-sm=row]>[flex-sm=\"55\"],[layout-sm=row]>[flex=\"55\"],[layout=row]>[flex-sm=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-width:55%}[layout-sm=column]>[flex-sm=\"55\"],[layout-sm=column]>[flex=\"55\"],[layout=column]>[flex-sm=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-height:55%}[layout-sm=row]>[flex-sm=\"60\"],[layout-sm=row]>[flex=\"60\"],[layout=row]>[flex-sm=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-width:60%}[layout-sm=column]>[flex-sm=\"60\"],[layout-sm=column]>[flex=\"60\"],[layout=column]>[flex-sm=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-height:60%}[layout-sm=row]>[flex-sm=\"65\"],[layout-sm=row]>[flex=\"65\"],[layout=row]>[flex-sm=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-width:65%}[layout-sm=column]>[flex-sm=\"65\"],[layout-sm=column]>[flex=\"65\"],[layout=column]>[flex-sm=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-height:65%}[layout-sm=row]>[flex-sm=\"70\"],[layout-sm=row]>[flex=\"70\"],[layout=row]>[flex-sm=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-width:70%}[layout-sm=column]>[flex-sm=\"70\"],[layout-sm=column]>[flex=\"70\"],[layout=column]>[flex-sm=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-height:70%}[layout-sm=row]>[flex-sm=\"75\"],[layout-sm=row]>[flex=\"75\"],[layout=row]>[flex-sm=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-width:75%}[layout-sm=column]>[flex-sm=\"75\"],[layout-sm=column]>[flex=\"75\"],[layout=column]>[flex-sm=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-height:75%}[layout-sm=row]>[flex-sm=\"80\"],[layout-sm=row]>[flex=\"80\"],[layout=row]>[flex-sm=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-width:80%}[layout-sm=column]>[flex-sm=\"80\"],[layout-sm=column]>[flex=\"80\"],[layout=column]>[flex-sm=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-height:80%}[layout-sm=row]>[flex-sm=\"85\"],[layout-sm=row]>[flex=\"85\"],[layout=row]>[flex-sm=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-width:85%}[layout-sm=column]>[flex-sm=\"85\"],[layout-sm=column]>[flex=\"85\"],[layout=column]>[flex-sm=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-height:85%}[layout-sm=row]>[flex-sm=\"90\"],[layout-sm=row]>[flex=\"90\"],[layout=row]>[flex-sm=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-width:90%}[layout-sm=column]>[flex-sm=\"90\"],[layout-sm=column]>[flex=\"90\"],[layout=column]>[flex-sm=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-height:90%}[layout-sm=row]>[flex-sm=\"95\"],[layout-sm=row]>[flex=\"95\"],[layout=row]>[flex-sm=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-width:95%}[layout-sm=column]>[flex-sm=\"95\"],[layout-sm=column]>[flex=\"95\"],[layout=column]>[flex-sm=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-height:95%}[layout-sm=row]>[flex-sm=\"100\"],[layout-sm=row]>[flex=\"100\"],[layout=row]>[flex-sm=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%}[layout-sm=column]>[flex-sm=\"100\"],[layout-sm=column]>[flex=\"100\"],[layout=column]>[flex-sm=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-height:100%}[layout-sm=row]>[flex-sm=\"33\"],[layout-sm=row]>[flex=\"33\"],[layout=row]>[flex-sm=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-width:33.33%}[layout-sm=column]>[flex-sm=\"33\"],[layout-sm=column]>[flex=\"33\"],[layout=column]>[flex-sm=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-height:33.33%}[layout-sm=row]>[flex-sm=\"66\"],[layout-sm=row]>[flex=\"66\"],[layout=row]>[flex-sm=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-width:66.66%}[layout-sm=column]>[flex-sm=\"66\"],[layout-sm=column]>[flex=\"66\"],[layout=column]>[flex-sm=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-height:66.66%}[hide-sm]{display:none}}@media (min-width:600px){[flex-offset-gt-sm=\"0\"]{margin-left:0}[flex-offset-gt-sm=\"5\"]{margin-left:5%}[flex-offset-gt-sm=\"10\"]{margin-left:10%}[flex-offset-gt-sm=\"15\"]{margin-left:15%}[flex-offset-gt-sm=\"20\"]{margin-left:20%}[flex-offset-gt-sm=\"25\"]{margin-left:25%}[flex-offset-gt-sm=\"30\"]{margin-left:30%}[flex-offset-gt-sm=\"35\"]{margin-left:35%}[flex-offset-gt-sm=\"40\"]{margin-left:40%}[flex-offset-gt-sm=\"45\"]{margin-left:45%}[flex-offset-gt-sm=\"50\"]{margin-left:50%}[flex-offset-gt-sm=\"55\"]{margin-left:55%}[flex-offset-gt-sm=\"60\"]{margin-left:60%}[flex-offset-gt-sm=\"65\"]{margin-left:65%}[flex-offset-gt-sm=\"70\"]{margin-left:70%}[flex-offset-gt-sm=\"75\"]{margin-left:75%}[flex-offset-gt-sm=\"80\"]{margin-left:80%}[flex-offset-gt-sm=\"85\"]{margin-left:85%}[flex-offset-gt-sm=\"90\"]{margin-left:90%}[flex-offset-gt-sm=\"95\"]{margin-left:95%}[flex-offset-gt-sm=\"33\"]{margin-left:33.33333%}[flex-offset-gt-sm=\"66\"]{margin-left:66.66667%}[flex-order-gt-sm=\"0\"]{-ms-flex-order:0;order:0}[flex-order-gt-sm=\"1\"]{-ms-flex-order:1;order:1}[flex-order-gt-sm=\"2\"]{-ms-flex-order:2;order:2}[flex-order-gt-sm=\"3\"]{-ms-flex-order:3;order:3}[flex-order-gt-sm=\"4\"]{-ms-flex-order:4;order:4}[flex-order-gt-sm=\"5\"]{-ms-flex-order:5;order:5}[flex-order-gt-sm=\"6\"]{-ms-flex-order:6;order:6}[flex-order-gt-sm=\"7\"]{-ms-flex-order:7;order:7}[flex-order-gt-sm=\"8\"]{-ms-flex-order:8;order:8}[flex-order-gt-sm=\"9\"]{-ms-flex-order:9;order:9}[flex-order-gt-sm=\"10\"]{-ms-flex-order:10;order:10}[flex-order-gt-sm=\"11\"]{-ms-flex-order:11;order:11}[flex-order-gt-sm=\"12\"]{-ms-flex-order:12;order:12}[flex-order-gt-sm=\"13\"]{-ms-flex-order:13;order:13}[flex-order-gt-sm=\"14\"]{-ms-flex-order:14;order:14}[flex-order-gt-sm=\"15\"]{-ms-flex-order:15;order:15}[flex-order-gt-sm=\"16\"]{-ms-flex-order:16;order:16}[flex-order-gt-sm=\"17\"]{-ms-flex-order:17;order:17}[flex-order-gt-sm=\"18\"]{-ms-flex-order:18;order:18}[flex-order-gt-sm=\"19\"]{-ms-flex-order:19;order:19}[flex-order-gt-sm=\"20\"]{-ms-flex-order:20;order:20}[layout-gt-sm]{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[layout-gt-sm]>*{box-sizing:border-box}[layout-gt-sm=column]{-ms-flex-direction:column;flex-direction:column}[layout-gt-sm=row]{-ms-flex-direction:row;flex-direction:row}[layout-align-gt-sm]{-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch}[layout-align-gt-sm^=start]{-ms-flex-pack:start;justify-content:flex-start}[layout-align-gt-sm^=center]{-ms-flex-pack:center;justify-content:center}[layout-align-gt-sm^=end]{-ms-flex-pack:end;justify-content:flex-end}[layout-align-gt-sm^=space-around]{-ms-flex-pack:distribute;justify-content:space-around}[layout-align-gt-sm^=space-between]{-ms-flex-pack:justify;justify-content:space-between}[layout-align-gt-sm$=start]{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}[layout-align-gt-sm$=center]{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;max-width:100%}[layout-align-gt-sm$=center]>*{max-width:100%}[layout-align-gt-sm$=end]{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;-ms-flex-line-pack:end;align-content:flex-end}[layout-align-gt-sm=center],[layout-align-gt-sm=end],[layout-align-gt-sm=space-around],[layout-align-gt-sm=space-between],[layout-align-gt-sm=start]{-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch;-ms-flex-line-pack:stretch;align-content:stretch}[flex-gt-sm]{-ms-flex:1;flex:1}[flex-gt-sm-start]{margin-bottom:auto}[flex-gt-sm-end]{margin-top:auto}[flex-gt-sm-none]{-ms-flex:0 0 auto;flex:0 0 auto}[flex-gt-sm-initial]{-ms-flex:0 1 auto;flex:0 1 auto}[flex-gt-sm-noshrink]{-ms-flex:1 0 auto;flex:1 0 auto}[flex-gt-sm-auto]{-ms-flex:1 1 auto;flex:1 1 auto}[flex-gt-sm-grow]{-ms-flex:1 1 100%;flex:1 1 100%}[flex-gt-sm],[layout-gt-sm=row]>[flex-gt-sm],[layout=row]>[flex-gt-sm]{max-height:100%}[layout-gt-sm=column]>[flex-gt-sm],[layout=column]>[flex-gt-sm]{max-width:100%}[layout-gt-sm=row]>[flex-gt-sm=\"5\"],[layout-gt-sm=row]>[flex=\"5\"],[layout=row]>[flex-gt-sm=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-width:5%}[layout-gt-sm=column]>[flex-gt-sm=\"5\"],[layout-gt-sm=column]>[flex=\"5\"],[layout=column]>[flex-gt-sm=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-height:5%}[layout-gt-sm=row]>[flex-gt-sm=\"10\"],[layout-gt-sm=row]>[flex=\"10\"],[layout=row]>[flex-gt-sm=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-width:10%}[layout-gt-sm=column]>[flex-gt-sm=\"10\"],[layout-gt-sm=column]>[flex=\"10\"],[layout=column]>[flex-gt-sm=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-height:10%}[layout-gt-sm=row]>[flex-gt-sm=\"15\"],[layout-gt-sm=row]>[flex=\"15\"],[layout=row]>[flex-gt-sm=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-width:15%}[layout-gt-sm=column]>[flex-gt-sm=\"15\"],[layout-gt-sm=column]>[flex=\"15\"],[layout=column]>[flex-gt-sm=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-height:15%}[layout-gt-sm=row]>[flex-gt-sm=\"20\"],[layout-gt-sm=row]>[flex=\"20\"],[layout=row]>[flex-gt-sm=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-width:20%}[layout-gt-sm=column]>[flex-gt-sm=\"20\"],[layout-gt-sm=column]>[flex=\"20\"],[layout=column]>[flex-gt-sm=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-height:20%}[layout-gt-sm=row]>[flex-gt-sm=\"25\"],[layout-gt-sm=row]>[flex=\"25\"],[layout=row]>[flex-gt-sm=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-width:25%}[layout-gt-sm=column]>[flex-gt-sm=\"25\"],[layout-gt-sm=column]>[flex=\"25\"],[layout=column]>[flex-gt-sm=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-height:25%}[layout-gt-sm=row]>[flex-gt-sm=\"30\"],[layout-gt-sm=row]>[flex=\"30\"],[layout=row]>[flex-gt-sm=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-width:30%}[layout-gt-sm=column]>[flex-gt-sm=\"30\"],[layout-gt-sm=column]>[flex=\"30\"],[layout=column]>[flex-gt-sm=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-height:30%}[layout-gt-sm=row]>[flex-gt-sm=\"35\"],[layout-gt-sm=row]>[flex=\"35\"],[layout=row]>[flex-gt-sm=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-width:35%}[layout-gt-sm=column]>[flex-gt-sm=\"35\"],[layout-gt-sm=column]>[flex=\"35\"],[layout=column]>[flex-gt-sm=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-height:35%}[layout-gt-sm=row]>[flex-gt-sm=\"40\"],[layout-gt-sm=row]>[flex=\"40\"],[layout=row]>[flex-gt-sm=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-width:40%}[layout-gt-sm=column]>[flex-gt-sm=\"40\"],[layout-gt-sm=column]>[flex=\"40\"],[layout=column]>[flex-gt-sm=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-height:40%}[layout-gt-sm=row]>[flex-gt-sm=\"45\"],[layout-gt-sm=row]>[flex=\"45\"],[layout=row]>[flex-gt-sm=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-width:45%}[layout-gt-sm=column]>[flex-gt-sm=\"45\"],[layout-gt-sm=column]>[flex=\"45\"],[layout=column]>[flex-gt-sm=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-height:45%}[layout-gt-sm=row]>[flex-gt-sm=\"50\"],[layout-gt-sm=row]>[flex=\"50\"],[layout=row]>[flex-gt-sm=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%}[layout-gt-sm=column]>[flex-gt-sm=\"50\"],[layout-gt-sm=column]>[flex=\"50\"],[layout=column]>[flex-gt-sm=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-height:50%}[layout-gt-sm=row]>[flex-gt-sm=\"55\"],[layout-gt-sm=row]>[flex=\"55\"],[layout=row]>[flex-gt-sm=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-width:55%}[layout-gt-sm=column]>[flex-gt-sm=\"55\"],[layout-gt-sm=column]>[flex=\"55\"],[layout=column]>[flex-gt-sm=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-height:55%}[layout-gt-sm=row]>[flex-gt-sm=\"60\"],[layout-gt-sm=row]>[flex=\"60\"],[layout=row]>[flex-gt-sm=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-width:60%}[layout-gt-sm=column]>[flex-gt-sm=\"60\"],[layout-gt-sm=column]>[flex=\"60\"],[layout=column]>[flex-gt-sm=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-height:60%}[layout-gt-sm=row]>[flex-gt-sm=\"65\"],[layout-gt-sm=row]>[flex=\"65\"],[layout=row]>[flex-gt-sm=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-width:65%}[layout-gt-sm=column]>[flex-gt-sm=\"65\"],[layout-gt-sm=column]>[flex=\"65\"],[layout=column]>[flex-gt-sm=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-height:65%}[layout-gt-sm=row]>[flex-gt-sm=\"70\"],[layout-gt-sm=row]>[flex=\"70\"],[layout=row]>[flex-gt-sm=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-width:70%}[layout-gt-sm=column]>[flex-gt-sm=\"70\"],[layout-gt-sm=column]>[flex=\"70\"],[layout=column]>[flex-gt-sm=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-height:70%}[layout-gt-sm=row]>[flex-gt-sm=\"75\"],[layout-gt-sm=row]>[flex=\"75\"],[layout=row]>[flex-gt-sm=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-width:75%}[layout-gt-sm=column]>[flex-gt-sm=\"75\"],[layout-gt-sm=column]>[flex=\"75\"],[layout=column]>[flex-gt-sm=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-height:75%}[layout-gt-sm=row]>[flex-gt-sm=\"80\"],[layout-gt-sm=row]>[flex=\"80\"],[layout=row]>[flex-gt-sm=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-width:80%}[layout-gt-sm=column]>[flex-gt-sm=\"80\"],[layout-gt-sm=column]>[flex=\"80\"],[layout=column]>[flex-gt-sm=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-height:80%}[layout-gt-sm=row]>[flex-gt-sm=\"85\"],[layout-gt-sm=row]>[flex=\"85\"],[layout=row]>[flex-gt-sm=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-width:85%}[layout-gt-sm=column]>[flex-gt-sm=\"85\"],[layout-gt-sm=column]>[flex=\"85\"],[layout=column]>[flex-gt-sm=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-height:85%}[layout-gt-sm=row]>[flex-gt-sm=\"90\"],[layout-gt-sm=row]>[flex=\"90\"],[layout=row]>[flex-gt-sm=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-width:90%}[layout-gt-sm=column]>[flex-gt-sm=\"90\"],[layout-gt-sm=column]>[flex=\"90\"],[layout=column]>[flex-gt-sm=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-height:90%}[layout-gt-sm=row]>[flex-gt-sm=\"95\"],[layout-gt-sm=row]>[flex=\"95\"],[layout=row]>[flex-gt-sm=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-width:95%}[layout-gt-sm=column]>[flex-gt-sm=\"95\"],[layout-gt-sm=column]>[flex=\"95\"],[layout=column]>[flex-gt-sm=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-height:95%}[layout-gt-sm=row]>[flex-gt-sm=\"100\"],[layout-gt-sm=row]>[flex=\"100\"],[layout=row]>[flex-gt-sm=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%}[layout-gt-sm=column]>[flex-gt-sm=\"100\"],[layout-gt-sm=column]>[flex=\"100\"],[layout=column]>[flex-gt-sm=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-height:100%}[layout-gt-sm=row]>[flex-gt-sm=\"33\"],[layout-gt-sm=row]>[flex=\"33\"],[layout=row]>[flex-gt-sm=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-width:33.33%}[layout-gt-sm=column]>[flex-gt-sm=\"33\"],[layout-gt-sm=column]>[flex=\"33\"],[layout=column]>[flex-gt-sm=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-height:33.33%}[layout-gt-sm=row]>[flex-gt-sm=\"66\"],[layout-gt-sm=row]>[flex=\"66\"],[layout=row]>[flex-gt-sm=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-width:66.66%}[layout-gt-sm=column]>[flex-gt-sm=\"66\"],[layout-gt-sm=column]>[flex=\"66\"],[layout=column]>[flex-gt-sm=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-height:66.66%}[hide-gt-sm]{display:none}}@media (min-width:600px) and (max-width:959px){[flex-offset-md=\"0\"]{margin-left:0}[flex-offset-md=\"5\"]{margin-left:5%}[flex-offset-md=\"10\"]{margin-left:10%}[flex-offset-md=\"15\"]{margin-left:15%}[flex-offset-md=\"20\"]{margin-left:20%}[flex-offset-md=\"25\"]{margin-left:25%}[flex-offset-md=\"30\"]{margin-left:30%}[flex-offset-md=\"35\"]{margin-left:35%}[flex-offset-md=\"40\"]{margin-left:40%}[flex-offset-md=\"45\"]{margin-left:45%}[flex-offset-md=\"50\"]{margin-left:50%}[flex-offset-md=\"55\"]{margin-left:55%}[flex-offset-md=\"60\"]{margin-left:60%}[flex-offset-md=\"65\"]{margin-left:65%}[flex-offset-md=\"70\"]{margin-left:70%}[flex-offset-md=\"75\"]{margin-left:75%}[flex-offset-md=\"80\"]{margin-left:80%}[flex-offset-md=\"85\"]{margin-left:85%}[flex-offset-md=\"90\"]{margin-left:90%}[flex-offset-md=\"95\"]{margin-left:95%}[flex-offset-md=\"33\"]{margin-left:33.33333%}[flex-offset-md=\"66\"]{margin-left:66.66667%}[flex-order-md=\"0\"]{-ms-flex-order:0;order:0}[flex-order-md=\"1\"]{-ms-flex-order:1;order:1}[flex-order-md=\"2\"]{-ms-flex-order:2;order:2}[flex-order-md=\"3\"]{-ms-flex-order:3;order:3}[flex-order-md=\"4\"]{-ms-flex-order:4;order:4}[flex-order-md=\"5\"]{-ms-flex-order:5;order:5}[flex-order-md=\"6\"]{-ms-flex-order:6;order:6}[flex-order-md=\"7\"]{-ms-flex-order:7;order:7}[flex-order-md=\"8\"]{-ms-flex-order:8;order:8}[flex-order-md=\"9\"]{-ms-flex-order:9;order:9}[flex-order-md=\"10\"]{-ms-flex-order:10;order:10}[flex-order-md=\"11\"]{-ms-flex-order:11;order:11}[flex-order-md=\"12\"]{-ms-flex-order:12;order:12}[flex-order-md=\"13\"]{-ms-flex-order:13;order:13}[flex-order-md=\"14\"]{-ms-flex-order:14;order:14}[flex-order-md=\"15\"]{-ms-flex-order:15;order:15}[flex-order-md=\"16\"]{-ms-flex-order:16;order:16}[flex-order-md=\"17\"]{-ms-flex-order:17;order:17}[flex-order-md=\"18\"]{-ms-flex-order:18;order:18}[flex-order-md=\"19\"]{-ms-flex-order:19;order:19}[flex-order-md=\"20\"]{-ms-flex-order:20;order:20}[layout-md]{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[layout-md]>*{box-sizing:border-box}[layout-md=column]{-ms-flex-direction:column;flex-direction:column}[layout-md=row]{-ms-flex-direction:row;flex-direction:row}[layout-align-md]{-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch}[layout-align-md^=start]{-ms-flex-pack:start;justify-content:flex-start}[layout-align-md^=center]{-ms-flex-pack:center;justify-content:center}[layout-align-md^=end]{-ms-flex-pack:end;justify-content:flex-end}[layout-align-md^=space-around]{-ms-flex-pack:distribute;justify-content:space-around}[layout-align-md^=space-between]{-ms-flex-pack:justify;justify-content:space-between}[layout-align-md$=start]{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}[layout-align-md$=center]{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;max-width:100%}[layout-align-md$=center]>*{max-width:100%}[layout-align-md$=end]{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;-ms-flex-line-pack:end;align-content:flex-end}[layout-align-md=center],[layout-align-md=end],[layout-align-md=space-around],[layout-align-md=space-between],[layout-align-md=start]{-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch;-ms-flex-line-pack:stretch;align-content:stretch}[flex-md]{-ms-flex:1;flex:1}[flex-md-start]{margin-bottom:auto}[flex-md-end]{margin-top:auto}[flex-md-none]{-ms-flex:0 0 auto;flex:0 0 auto}[flex-md-initial]{-ms-flex:0 1 auto;flex:0 1 auto}[flex-md-noshrink]{-ms-flex:1 0 auto;flex:1 0 auto}[flex-md-auto]{-ms-flex:1 1 auto;flex:1 1 auto}[flex-md-grow]{-ms-flex:1 1 100%;flex:1 1 100%}[flex-md],[layout-md=row]>[flex-md],[layout=row]>[flex-md]{max-height:100%}[layout-md=column]>[flex-md],[layout=column]>[flex-md]{max-width:100%}[layout-md=row]>[flex-md=\"5\"],[layout-md=row]>[flex=\"5\"],[layout=row]>[flex-md=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-width:5%}[layout-md=column]>[flex-md=\"5\"],[layout-md=column]>[flex=\"5\"],[layout=column]>[flex-md=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-height:5%}[layout-md=row]>[flex-md=\"10\"],[layout-md=row]>[flex=\"10\"],[layout=row]>[flex-md=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-width:10%}[layout-md=column]>[flex-md=\"10\"],[layout-md=column]>[flex=\"10\"],[layout=column]>[flex-md=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-height:10%}[layout-md=row]>[flex-md=\"15\"],[layout-md=row]>[flex=\"15\"],[layout=row]>[flex-md=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-width:15%}[layout-md=column]>[flex-md=\"15\"],[layout-md=column]>[flex=\"15\"],[layout=column]>[flex-md=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-height:15%}[layout-md=row]>[flex-md=\"20\"],[layout-md=row]>[flex=\"20\"],[layout=row]>[flex-md=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-width:20%}[layout-md=column]>[flex-md=\"20\"],[layout-md=column]>[flex=\"20\"],[layout=column]>[flex-md=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-height:20%}[layout-md=row]>[flex-md=\"25\"],[layout-md=row]>[flex=\"25\"],[layout=row]>[flex-md=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-width:25%}[layout-md=column]>[flex-md=\"25\"],[layout-md=column]>[flex=\"25\"],[layout=column]>[flex-md=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-height:25%}[layout-md=row]>[flex-md=\"30\"],[layout-md=row]>[flex=\"30\"],[layout=row]>[flex-md=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-width:30%}[layout-md=column]>[flex-md=\"30\"],[layout-md=column]>[flex=\"30\"],[layout=column]>[flex-md=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-height:30%}[layout-md=row]>[flex-md=\"35\"],[layout-md=row]>[flex=\"35\"],[layout=row]>[flex-md=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-width:35%}[layout-md=column]>[flex-md=\"35\"],[layout-md=column]>[flex=\"35\"],[layout=column]>[flex-md=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-height:35%}[layout-md=row]>[flex-md=\"40\"],[layout-md=row]>[flex=\"40\"],[layout=row]>[flex-md=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-width:40%}[layout-md=column]>[flex-md=\"40\"],[layout-md=column]>[flex=\"40\"],[layout=column]>[flex-md=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-height:40%}[layout-md=row]>[flex-md=\"45\"],[layout-md=row]>[flex=\"45\"],[layout=row]>[flex-md=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-width:45%}[layout-md=column]>[flex-md=\"45\"],[layout-md=column]>[flex=\"45\"],[layout=column]>[flex-md=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-height:45%}[layout-md=row]>[flex-md=\"50\"],[layout-md=row]>[flex=\"50\"],[layout=row]>[flex-md=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%}[layout-md=column]>[flex-md=\"50\"],[layout-md=column]>[flex=\"50\"],[layout=column]>[flex-md=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-height:50%}[layout-md=row]>[flex-md=\"55\"],[layout-md=row]>[flex=\"55\"],[layout=row]>[flex-md=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-width:55%}[layout-md=column]>[flex-md=\"55\"],[layout-md=column]>[flex=\"55\"],[layout=column]>[flex-md=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-height:55%}[layout-md=row]>[flex-md=\"60\"],[layout-md=row]>[flex=\"60\"],[layout=row]>[flex-md=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-width:60%}[layout-md=column]>[flex-md=\"60\"],[layout-md=column]>[flex=\"60\"],[layout=column]>[flex-md=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-height:60%}[layout-md=row]>[flex-md=\"65\"],[layout-md=row]>[flex=\"65\"],[layout=row]>[flex-md=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-width:65%}[layout-md=column]>[flex-md=\"65\"],[layout-md=column]>[flex=\"65\"],[layout=column]>[flex-md=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-height:65%}[layout-md=row]>[flex-md=\"70\"],[layout-md=row]>[flex=\"70\"],[layout=row]>[flex-md=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-width:70%}[layout-md=column]>[flex-md=\"70\"],[layout-md=column]>[flex=\"70\"],[layout=column]>[flex-md=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-height:70%}[layout-md=row]>[flex-md=\"75\"],[layout-md=row]>[flex=\"75\"],[layout=row]>[flex-md=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-width:75%}[layout-md=column]>[flex-md=\"75\"],[layout-md=column]>[flex=\"75\"],[layout=column]>[flex-md=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-height:75%}[layout-md=row]>[flex-md=\"80\"],[layout-md=row]>[flex=\"80\"],[layout=row]>[flex-md=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-width:80%}[layout-md=column]>[flex-md=\"80\"],[layout-md=column]>[flex=\"80\"],[layout=column]>[flex-md=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-height:80%}[layout-md=row]>[flex-md=\"85\"],[layout-md=row]>[flex=\"85\"],[layout=row]>[flex-md=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-width:85%}[layout-md=column]>[flex-md=\"85\"],[layout-md=column]>[flex=\"85\"],[layout=column]>[flex-md=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-height:85%}[layout-md=row]>[flex-md=\"90\"],[layout-md=row]>[flex=\"90\"],[layout=row]>[flex-md=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-width:90%}[layout-md=column]>[flex-md=\"90\"],[layout-md=column]>[flex=\"90\"],[layout=column]>[flex-md=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-height:90%}[layout-md=row]>[flex-md=\"95\"],[layout-md=row]>[flex=\"95\"],[layout=row]>[flex-md=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-width:95%}[layout-md=column]>[flex-md=\"95\"],[layout-md=column]>[flex=\"95\"],[layout=column]>[flex-md=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-height:95%}[layout-md=row]>[flex-md=\"100\"],[layout-md=row]>[flex=\"100\"],[layout=row]>[flex-md=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%}[layout-md=column]>[flex-md=\"100\"],[layout-md=column]>[flex=\"100\"],[layout=column]>[flex-md=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-height:100%}[layout-md=row]>[flex-md=\"33\"],[layout-md=row]>[flex=\"33\"],[layout=row]>[flex-md=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-width:33.33%}[layout-md=column]>[flex-md=\"33\"],[layout-md=column]>[flex=\"33\"],[layout=column]>[flex-md=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-height:33.33%}[layout-md=row]>[flex-md=\"66\"],[layout-md=row]>[flex=\"66\"],[layout=row]>[flex-md=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-width:66.66%}[layout-md=column]>[flex-md=\"66\"],[layout-md=column]>[flex=\"66\"],[layout=column]>[flex-md=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-height:66.66%}[hide-md]{display:none}}@media (min-width:960px){[flex-offset-gt-md=\"0\"]{margin-left:0}[flex-offset-gt-md=\"5\"]{margin-left:5%}[flex-offset-gt-md=\"10\"]{margin-left:10%}[flex-offset-gt-md=\"15\"]{margin-left:15%}[flex-offset-gt-md=\"20\"]{margin-left:20%}[flex-offset-gt-md=\"25\"]{margin-left:25%}[flex-offset-gt-md=\"30\"]{margin-left:30%}[flex-offset-gt-md=\"35\"]{margin-left:35%}[flex-offset-gt-md=\"40\"]{margin-left:40%}[flex-offset-gt-md=\"45\"]{margin-left:45%}[flex-offset-gt-md=\"50\"]{margin-left:50%}[flex-offset-gt-md=\"55\"]{margin-left:55%}[flex-offset-gt-md=\"60\"]{margin-left:60%}[flex-offset-gt-md=\"65\"]{margin-left:65%}[flex-offset-gt-md=\"70\"]{margin-left:70%}[flex-offset-gt-md=\"75\"]{margin-left:75%}[flex-offset-gt-md=\"80\"]{margin-left:80%}[flex-offset-gt-md=\"85\"]{margin-left:85%}[flex-offset-gt-md=\"90\"]{margin-left:90%}[flex-offset-gt-md=\"95\"]{margin-left:95%}[flex-offset-gt-md=\"33\"]{margin-left:33.33333%}[flex-offset-gt-md=\"66\"]{margin-left:66.66667%}[flex-order-gt-md=\"0\"]{-ms-flex-order:0;order:0}[flex-order-gt-md=\"1\"]{-ms-flex-order:1;order:1}[flex-order-gt-md=\"2\"]{-ms-flex-order:2;order:2}[flex-order-gt-md=\"3\"]{-ms-flex-order:3;order:3}[flex-order-gt-md=\"4\"]{-ms-flex-order:4;order:4}[flex-order-gt-md=\"5\"]{-ms-flex-order:5;order:5}[flex-order-gt-md=\"6\"]{-ms-flex-order:6;order:6}[flex-order-gt-md=\"7\"]{-ms-flex-order:7;order:7}[flex-order-gt-md=\"8\"]{-ms-flex-order:8;order:8}[flex-order-gt-md=\"9\"]{-ms-flex-order:9;order:9}[flex-order-gt-md=\"10\"]{-ms-flex-order:10;order:10}[flex-order-gt-md=\"11\"]{-ms-flex-order:11;order:11}[flex-order-gt-md=\"12\"]{-ms-flex-order:12;order:12}[flex-order-gt-md=\"13\"]{-ms-flex-order:13;order:13}[flex-order-gt-md=\"14\"]{-ms-flex-order:14;order:14}[flex-order-gt-md=\"15\"]{-ms-flex-order:15;order:15}[flex-order-gt-md=\"16\"]{-ms-flex-order:16;order:16}[flex-order-gt-md=\"17\"]{-ms-flex-order:17;order:17}[flex-order-gt-md=\"18\"]{-ms-flex-order:18;order:18}[flex-order-gt-md=\"19\"]{-ms-flex-order:19;order:19}[flex-order-gt-md=\"20\"]{-ms-flex-order:20;order:20}[layout-gt-md]{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[layout-gt-md]>*{box-sizing:border-box}[layout-gt-md=column]{-ms-flex-direction:column;flex-direction:column}[layout-gt-md=row]{-ms-flex-direction:row;flex-direction:row}[layout-align-gt-md]{-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch}[layout-align-gt-md^=start]{-ms-flex-pack:start;justify-content:flex-start}[layout-align-gt-md^=center]{-ms-flex-pack:center;justify-content:center}[layout-align-gt-md^=end]{-ms-flex-pack:end;justify-content:flex-end}[layout-align-gt-md^=space-around]{-ms-flex-pack:distribute;justify-content:space-around}[layout-align-gt-md^=space-between]{-ms-flex-pack:justify;justify-content:space-between}[layout-align-gt-md$=start]{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}[layout-align-gt-md$=center]{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;max-width:100%}[layout-align-gt-md$=center]>*{max-width:100%}[layout-align-gt-md$=end]{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;-ms-flex-line-pack:end;align-content:flex-end}[layout-align-gt-md=center],[layout-align-gt-md=end],[layout-align-gt-md=space-around],[layout-align-gt-md=space-between],[layout-align-gt-md=start]{-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch;-ms-flex-line-pack:stretch;align-content:stretch}[flex-gt-md]{-ms-flex:1;flex:1}[flex-gt-md-start]{margin-bottom:auto}[flex-gt-md-end]{margin-top:auto}[flex-gt-md-none]{-ms-flex:0 0 auto;flex:0 0 auto}[flex-gt-md-initial]{-ms-flex:0 1 auto;flex:0 1 auto}[flex-gt-md-noshrink]{-ms-flex:1 0 auto;flex:1 0 auto}[flex-gt-md-auto]{-ms-flex:1 1 auto;flex:1 1 auto}[flex-gt-md-grow]{-ms-flex:1 1 100%;flex:1 1 100%}[flex-gt-md],[layout-gt-md=row]>[flex-gt-md],[layout=row]>[flex-gt-md]{max-height:100%}[layout-gt-md=column]>[flex-gt-md],[layout=column]>[flex-gt-md]{max-width:100%}[layout-gt-md=row]>[flex-gt-md=\"5\"],[layout-gt-md=row]>[flex=\"5\"],[layout=row]>[flex-gt-md=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-width:5%}[layout-gt-md=column]>[flex-gt-md=\"5\"],[layout-gt-md=column]>[flex=\"5\"],[layout=column]>[flex-gt-md=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-height:5%}[layout-gt-md=row]>[flex-gt-md=\"10\"],[layout-gt-md=row]>[flex=\"10\"],[layout=row]>[flex-gt-md=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-width:10%}[layout-gt-md=column]>[flex-gt-md=\"10\"],[layout-gt-md=column]>[flex=\"10\"],[layout=column]>[flex-gt-md=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-height:10%}[layout-gt-md=row]>[flex-gt-md=\"15\"],[layout-gt-md=row]>[flex=\"15\"],[layout=row]>[flex-gt-md=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-width:15%}[layout-gt-md=column]>[flex-gt-md=\"15\"],[layout-gt-md=column]>[flex=\"15\"],[layout=column]>[flex-gt-md=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-height:15%}[layout-gt-md=row]>[flex-gt-md=\"20\"],[layout-gt-md=row]>[flex=\"20\"],[layout=row]>[flex-gt-md=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-width:20%}[layout-gt-md=column]>[flex-gt-md=\"20\"],[layout-gt-md=column]>[flex=\"20\"],[layout=column]>[flex-gt-md=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-height:20%}[layout-gt-md=row]>[flex-gt-md=\"25\"],[layout-gt-md=row]>[flex=\"25\"],[layout=row]>[flex-gt-md=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-width:25%}[layout-gt-md=column]>[flex-gt-md=\"25\"],[layout-gt-md=column]>[flex=\"25\"],[layout=column]>[flex-gt-md=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-height:25%}[layout-gt-md=row]>[flex-gt-md=\"30\"],[layout-gt-md=row]>[flex=\"30\"],[layout=row]>[flex-gt-md=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-width:30%}[layout-gt-md=column]>[flex-gt-md=\"30\"],[layout-gt-md=column]>[flex=\"30\"],[layout=column]>[flex-gt-md=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-height:30%}[layout-gt-md=row]>[flex-gt-md=\"35\"],[layout-gt-md=row]>[flex=\"35\"],[layout=row]>[flex-gt-md=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-width:35%}[layout-gt-md=column]>[flex-gt-md=\"35\"],[layout-gt-md=column]>[flex=\"35\"],[layout=column]>[flex-gt-md=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-height:35%}[layout-gt-md=row]>[flex-gt-md=\"40\"],[layout-gt-md=row]>[flex=\"40\"],[layout=row]>[flex-gt-md=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-width:40%}[layout-gt-md=column]>[flex-gt-md=\"40\"],[layout-gt-md=column]>[flex=\"40\"],[layout=column]>[flex-gt-md=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-height:40%}[layout-gt-md=row]>[flex-gt-md=\"45\"],[layout-gt-md=row]>[flex=\"45\"],[layout=row]>[flex-gt-md=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-width:45%}[layout-gt-md=column]>[flex-gt-md=\"45\"],[layout-gt-md=column]>[flex=\"45\"],[layout=column]>[flex-gt-md=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-height:45%}[layout-gt-md=row]>[flex-gt-md=\"50\"],[layout-gt-md=row]>[flex=\"50\"],[layout=row]>[flex-gt-md=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%}[layout-gt-md=column]>[flex-gt-md=\"50\"],[layout-gt-md=column]>[flex=\"50\"],[layout=column]>[flex-gt-md=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-height:50%}[layout-gt-md=row]>[flex-gt-md=\"55\"],[layout-gt-md=row]>[flex=\"55\"],[layout=row]>[flex-gt-md=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-width:55%}[layout-gt-md=column]>[flex-gt-md=\"55\"],[layout-gt-md=column]>[flex=\"55\"],[layout=column]>[flex-gt-md=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-height:55%}[layout-gt-md=row]>[flex-gt-md=\"60\"],[layout-gt-md=row]>[flex=\"60\"],[layout=row]>[flex-gt-md=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-width:60%}[layout-gt-md=column]>[flex-gt-md=\"60\"],[layout-gt-md=column]>[flex=\"60\"],[layout=column]>[flex-gt-md=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-height:60%}[layout-gt-md=row]>[flex-gt-md=\"65\"],[layout-gt-md=row]>[flex=\"65\"],[layout=row]>[flex-gt-md=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-width:65%}[layout-gt-md=column]>[flex-gt-md=\"65\"],[layout-gt-md=column]>[flex=\"65\"],[layout=column]>[flex-gt-md=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-height:65%}[layout-gt-md=row]>[flex-gt-md=\"70\"],[layout-gt-md=row]>[flex=\"70\"],[layout=row]>[flex-gt-md=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-width:70%}[layout-gt-md=column]>[flex-gt-md=\"70\"],[layout-gt-md=column]>[flex=\"70\"],[layout=column]>[flex-gt-md=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-height:70%}[layout-gt-md=row]>[flex-gt-md=\"75\"],[layout-gt-md=row]>[flex=\"75\"],[layout=row]>[flex-gt-md=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-width:75%}[layout-gt-md=column]>[flex-gt-md=\"75\"],[layout-gt-md=column]>[flex=\"75\"],[layout=column]>[flex-gt-md=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-height:75%}[layout-gt-md=row]>[flex-gt-md=\"80\"],[layout-gt-md=row]>[flex=\"80\"],[layout=row]>[flex-gt-md=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-width:80%}[layout-gt-md=column]>[flex-gt-md=\"80\"],[layout-gt-md=column]>[flex=\"80\"],[layout=column]>[flex-gt-md=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-height:80%}[layout-gt-md=row]>[flex-gt-md=\"85\"],[layout-gt-md=row]>[flex=\"85\"],[layout=row]>[flex-gt-md=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-width:85%}[layout-gt-md=column]>[flex-gt-md=\"85\"],[layout-gt-md=column]>[flex=\"85\"],[layout=column]>[flex-gt-md=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-height:85%}[layout-gt-md=row]>[flex-gt-md=\"90\"],[layout-gt-md=row]>[flex=\"90\"],[layout=row]>[flex-gt-md=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-width:90%}[layout-gt-md=column]>[flex-gt-md=\"90\"],[layout-gt-md=column]>[flex=\"90\"],[layout=column]>[flex-gt-md=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-height:90%}[layout-gt-md=row]>[flex-gt-md=\"95\"],[layout-gt-md=row]>[flex=\"95\"],[layout=row]>[flex-gt-md=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-width:95%}[layout-gt-md=column]>[flex-gt-md=\"95\"],[layout-gt-md=column]>[flex=\"95\"],[layout=column]>[flex-gt-md=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-height:95%}[layout-gt-md=row]>[flex-gt-md=\"100\"],[layout-gt-md=row]>[flex=\"100\"],[layout=row]>[flex-gt-md=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%}[layout-gt-md=column]>[flex-gt-md=\"100\"],[layout-gt-md=column]>[flex=\"100\"],[layout=column]>[flex-gt-md=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-height:100%}[layout-gt-md=row]>[flex-gt-md=\"33\"],[layout-gt-md=row]>[flex=\"33\"],[layout=row]>[flex-gt-md=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-width:33.33%}[layout-gt-md=column]>[flex-gt-md=\"33\"],[layout-gt-md=column]>[flex=\"33\"],[layout=column]>[flex-gt-md=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-height:33.33%}[layout-gt-md=row]>[flex-gt-md=\"66\"],[layout-gt-md=row]>[flex=\"66\"],[layout=row]>[flex-gt-md=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-width:66.66%}[layout-gt-md=column]>[flex-gt-md=\"66\"],[layout-gt-md=column]>[flex=\"66\"],[layout=column]>[flex-gt-md=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-height:66.66%}[hide-gt-md]{display:none}}@media (min-width:960px) and (max-width:1199px){[flex-offset-lg=\"0\"]{margin-left:0}[flex-offset-lg=\"5\"]{margin-left:5%}[flex-offset-lg=\"10\"]{margin-left:10%}[flex-offset-lg=\"15\"]{margin-left:15%}[flex-offset-lg=\"20\"]{margin-left:20%}[flex-offset-lg=\"25\"]{margin-left:25%}[flex-offset-lg=\"30\"]{margin-left:30%}[flex-offset-lg=\"35\"]{margin-left:35%}[flex-offset-lg=\"40\"]{margin-left:40%}[flex-offset-lg=\"45\"]{margin-left:45%}[flex-offset-lg=\"50\"]{margin-left:50%}[flex-offset-lg=\"55\"]{margin-left:55%}[flex-offset-lg=\"60\"]{margin-left:60%}[flex-offset-lg=\"65\"]{margin-left:65%}[flex-offset-lg=\"70\"]{margin-left:70%}[flex-offset-lg=\"75\"]{margin-left:75%}[flex-offset-lg=\"80\"]{margin-left:80%}[flex-offset-lg=\"85\"]{margin-left:85%}[flex-offset-lg=\"90\"]{margin-left:90%}[flex-offset-lg=\"95\"]{margin-left:95%}[flex-offset-lg=\"33\"]{margin-left:33.33333%}[flex-offset-lg=\"66\"]{margin-left:66.66667%}[flex-order-lg=\"0\"]{-ms-flex-order:0;order:0}[flex-order-lg=\"1\"]{-ms-flex-order:1;order:1}[flex-order-lg=\"2\"]{-ms-flex-order:2;order:2}[flex-order-lg=\"3\"]{-ms-flex-order:3;order:3}[flex-order-lg=\"4\"]{-ms-flex-order:4;order:4}[flex-order-lg=\"5\"]{-ms-flex-order:5;order:5}[flex-order-lg=\"6\"]{-ms-flex-order:6;order:6}[flex-order-lg=\"7\"]{-ms-flex-order:7;order:7}[flex-order-lg=\"8\"]{-ms-flex-order:8;order:8}[flex-order-lg=\"9\"]{-ms-flex-order:9;order:9}[flex-order-lg=\"10\"]{-ms-flex-order:10;order:10}[flex-order-lg=\"11\"]{-ms-flex-order:11;order:11}[flex-order-lg=\"12\"]{-ms-flex-order:12;order:12}[flex-order-lg=\"13\"]{-ms-flex-order:13;order:13}[flex-order-lg=\"14\"]{-ms-flex-order:14;order:14}[flex-order-lg=\"15\"]{-ms-flex-order:15;order:15}[flex-order-lg=\"16\"]{-ms-flex-order:16;order:16}[flex-order-lg=\"17\"]{-ms-flex-order:17;order:17}[flex-order-lg=\"18\"]{-ms-flex-order:18;order:18}[flex-order-lg=\"19\"]{-ms-flex-order:19;order:19}[flex-order-lg=\"20\"]{-ms-flex-order:20;order:20}[layout-lg]{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[layout-lg]>*{box-sizing:border-box}[layout-lg=column]{-ms-flex-direction:column;flex-direction:column}[layout-lg=row]{-ms-flex-direction:row;flex-direction:row}[layout-align-lg]{-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch}[layout-align-lg^=start]{-ms-flex-pack:start;justify-content:flex-start}[layout-align-lg^=center]{-ms-flex-pack:center;justify-content:center}[layout-align-lg^=end]{-ms-flex-pack:end;justify-content:flex-end}[layout-align-lg^=space-around]{-ms-flex-pack:distribute;justify-content:space-around}[layout-align-lg^=space-between]{-ms-flex-pack:justify;justify-content:space-between}[layout-align-lg$=start]{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}[layout-align-lg$=center]{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;max-width:100%}[layout-align-lg$=center]>*{max-width:100%}[layout-align-lg$=end]{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;-ms-flex-line-pack:end;align-content:flex-end}[layout-align-lg=center],[layout-align-lg=end],[layout-align-lg=space-around],[layout-align-lg=space-between],[layout-align-lg=start]{-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch;-ms-flex-line-pack:stretch;align-content:stretch}[flex-lg]{-ms-flex:1;flex:1}[flex-lg-start]{margin-bottom:auto}[flex-lg-end]{margin-top:auto}[flex-lg-none]{-ms-flex:0 0 auto;flex:0 0 auto}[flex-lg-initial]{-ms-flex:0 1 auto;flex:0 1 auto}[flex-lg-noshrink]{-ms-flex:1 0 auto;flex:1 0 auto}[flex-lg-auto]{-ms-flex:1 1 auto;flex:1 1 auto}[flex-lg-grow]{-ms-flex:1 1 100%;flex:1 1 100%}[flex-lg],[layout-lg=row]>[flex-lg],[layout=row]>[flex-lg]{max-height:100%}[layout-lg=column]>[flex-lg],[layout=column]>[flex-lg]{max-width:100%}[layout-lg=row]>[flex-lg=\"5\"],[layout-lg=row]>[flex=\"5\"],[layout=row]>[flex-lg=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-width:5%}[layout-lg=column]>[flex-lg=\"5\"],[layout-lg=column]>[flex=\"5\"],[layout=column]>[flex-lg=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-height:5%}[layout-lg=row]>[flex-lg=\"10\"],[layout-lg=row]>[flex=\"10\"],[layout=row]>[flex-lg=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-width:10%}[layout-lg=column]>[flex-lg=\"10\"],[layout-lg=column]>[flex=\"10\"],[layout=column]>[flex-lg=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-height:10%}[layout-lg=row]>[flex-lg=\"15\"],[layout-lg=row]>[flex=\"15\"],[layout=row]>[flex-lg=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-width:15%}[layout-lg=column]>[flex-lg=\"15\"],[layout-lg=column]>[flex=\"15\"],[layout=column]>[flex-lg=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-height:15%}[layout-lg=row]>[flex-lg=\"20\"],[layout-lg=row]>[flex=\"20\"],[layout=row]>[flex-lg=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-width:20%}[layout-lg=column]>[flex-lg=\"20\"],[layout-lg=column]>[flex=\"20\"],[layout=column]>[flex-lg=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-height:20%}[layout-lg=row]>[flex-lg=\"25\"],[layout-lg=row]>[flex=\"25\"],[layout=row]>[flex-lg=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-width:25%}[layout-lg=column]>[flex-lg=\"25\"],[layout-lg=column]>[flex=\"25\"],[layout=column]>[flex-lg=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-height:25%}[layout-lg=row]>[flex-lg=\"30\"],[layout-lg=row]>[flex=\"30\"],[layout=row]>[flex-lg=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-width:30%}[layout-lg=column]>[flex-lg=\"30\"],[layout-lg=column]>[flex=\"30\"],[layout=column]>[flex-lg=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-height:30%}[layout-lg=row]>[flex-lg=\"35\"],[layout-lg=row]>[flex=\"35\"],[layout=row]>[flex-lg=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-width:35%}[layout-lg=column]>[flex-lg=\"35\"],[layout-lg=column]>[flex=\"35\"],[layout=column]>[flex-lg=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-height:35%}[layout-lg=row]>[flex-lg=\"40\"],[layout-lg=row]>[flex=\"40\"],[layout=row]>[flex-lg=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-width:40%}[layout-lg=column]>[flex-lg=\"40\"],[layout-lg=column]>[flex=\"40\"],[layout=column]>[flex-lg=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-height:40%}[layout-lg=row]>[flex-lg=\"45\"],[layout-lg=row]>[flex=\"45\"],[layout=row]>[flex-lg=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-width:45%}[layout-lg=column]>[flex-lg=\"45\"],[layout-lg=column]>[flex=\"45\"],[layout=column]>[flex-lg=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-height:45%}[layout-lg=row]>[flex-lg=\"50\"],[layout-lg=row]>[flex=\"50\"],[layout=row]>[flex-lg=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%}[layout-lg=column]>[flex-lg=\"50\"],[layout-lg=column]>[flex=\"50\"],[layout=column]>[flex-lg=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-height:50%}[layout-lg=row]>[flex-lg=\"55\"],[layout-lg=row]>[flex=\"55\"],[layout=row]>[flex-lg=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-width:55%}[layout-lg=column]>[flex-lg=\"55\"],[layout-lg=column]>[flex=\"55\"],[layout=column]>[flex-lg=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-height:55%}[layout-lg=row]>[flex-lg=\"60\"],[layout-lg=row]>[flex=\"60\"],[layout=row]>[flex-lg=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-width:60%}[layout-lg=column]>[flex-lg=\"60\"],[layout-lg=column]>[flex=\"60\"],[layout=column]>[flex-lg=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-height:60%}[layout-lg=row]>[flex-lg=\"65\"],[layout-lg=row]>[flex=\"65\"],[layout=row]>[flex-lg=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-width:65%}[layout-lg=column]>[flex-lg=\"65\"],[layout-lg=column]>[flex=\"65\"],[layout=column]>[flex-lg=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-height:65%}[layout-lg=row]>[flex-lg=\"70\"],[layout-lg=row]>[flex=\"70\"],[layout=row]>[flex-lg=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-width:70%}[layout-lg=column]>[flex-lg=\"70\"],[layout-lg=column]>[flex=\"70\"],[layout=column]>[flex-lg=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-height:70%}[layout-lg=row]>[flex-lg=\"75\"],[layout-lg=row]>[flex=\"75\"],[layout=row]>[flex-lg=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-width:75%}[layout-lg=column]>[flex-lg=\"75\"],[layout-lg=column]>[flex=\"75\"],[layout=column]>[flex-lg=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-height:75%}[layout-lg=row]>[flex-lg=\"80\"],[layout-lg=row]>[flex=\"80\"],[layout=row]>[flex-lg=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-width:80%}[layout-lg=column]>[flex-lg=\"80\"],[layout-lg=column]>[flex=\"80\"],[layout=column]>[flex-lg=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-height:80%}[layout-lg=row]>[flex-lg=\"85\"],[layout-lg=row]>[flex=\"85\"],[layout=row]>[flex-lg=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-width:85%}[layout-lg=column]>[flex-lg=\"85\"],[layout-lg=column]>[flex=\"85\"],[layout=column]>[flex-lg=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-height:85%}[layout-lg=row]>[flex-lg=\"90\"],[layout-lg=row]>[flex=\"90\"],[layout=row]>[flex-lg=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-width:90%}[layout-lg=column]>[flex-lg=\"90\"],[layout-lg=column]>[flex=\"90\"],[layout=column]>[flex-lg=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-height:90%}[layout-lg=row]>[flex-lg=\"95\"],[layout-lg=row]>[flex=\"95\"],[layout=row]>[flex-lg=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-width:95%}[layout-lg=column]>[flex-lg=\"95\"],[layout-lg=column]>[flex=\"95\"],[layout=column]>[flex-lg=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-height:95%}[layout-lg=row]>[flex-lg=\"100\"],[layout-lg=row]>[flex=\"100\"],[layout=row]>[flex-lg=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%}[layout-lg=column]>[flex-lg=\"100\"],[layout-lg=column]>[flex=\"100\"],[layout=column]>[flex-lg=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-height:100%}[layout-lg=row]>[flex-lg=\"33\"],[layout-lg=row]>[flex=\"33\"],[layout=row]>[flex-lg=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-width:33.33%}[layout-lg=column]>[flex-lg=\"33\"],[layout-lg=column]>[flex=\"33\"],[layout=column]>[flex-lg=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-height:33.33%}[layout-lg=row]>[flex-lg=\"66\"],[layout-lg=row]>[flex=\"66\"],[layout=row]>[flex-lg=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-width:66.66%}[layout-lg=column]>[flex-lg=\"66\"],[layout-lg=column]>[flex=\"66\"],[layout=column]>[flex-lg=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-height:66.66%}[hide-lg]{display:none}}@media (min-width:1200px){[flex-offset-gt-lg=\"0\"]{margin-left:0}[flex-offset-gt-lg=\"5\"]{margin-left:5%}[flex-offset-gt-lg=\"10\"]{margin-left:10%}[flex-offset-gt-lg=\"15\"]{margin-left:15%}[flex-offset-gt-lg=\"20\"]{margin-left:20%}[flex-offset-gt-lg=\"25\"]{margin-left:25%}[flex-offset-gt-lg=\"30\"]{margin-left:30%}[flex-offset-gt-lg=\"35\"]{margin-left:35%}[flex-offset-gt-lg=\"40\"]{margin-left:40%}[flex-offset-gt-lg=\"45\"]{margin-left:45%}[flex-offset-gt-lg=\"50\"]{margin-left:50%}[flex-offset-gt-lg=\"55\"]{margin-left:55%}[flex-offset-gt-lg=\"60\"]{margin-left:60%}[flex-offset-gt-lg=\"65\"]{margin-left:65%}[flex-offset-gt-lg=\"70\"]{margin-left:70%}[flex-offset-gt-lg=\"75\"]{margin-left:75%}[flex-offset-gt-lg=\"80\"]{margin-left:80%}[flex-offset-gt-lg=\"85\"]{margin-left:85%}[flex-offset-gt-lg=\"90\"]{margin-left:90%}[flex-offset-gt-lg=\"95\"]{margin-left:95%}[flex-offset-gt-lg=\"33\"]{margin-left:33.33333%}[flex-offset-gt-lg=\"66\"]{margin-left:66.66667%}[flex-order-gt-lg=\"0\"]{-ms-flex-order:0;order:0}[flex-order-gt-lg=\"1\"]{-ms-flex-order:1;order:1}[flex-order-gt-lg=\"2\"]{-ms-flex-order:2;order:2}[flex-order-gt-lg=\"3\"]{-ms-flex-order:3;order:3}[flex-order-gt-lg=\"4\"]{-ms-flex-order:4;order:4}[flex-order-gt-lg=\"5\"]{-ms-flex-order:5;order:5}[flex-order-gt-lg=\"6\"]{-ms-flex-order:6;order:6}[flex-order-gt-lg=\"7\"]{-ms-flex-order:7;order:7}[flex-order-gt-lg=\"8\"]{-ms-flex-order:8;order:8}[flex-order-gt-lg=\"9\"]{-ms-flex-order:9;order:9}[flex-order-gt-lg=\"10\"]{-ms-flex-order:10;order:10}[flex-order-gt-lg=\"11\"]{-ms-flex-order:11;order:11}[flex-order-gt-lg=\"12\"]{-ms-flex-order:12;order:12}[flex-order-gt-lg=\"13\"]{-ms-flex-order:13;order:13}[flex-order-gt-lg=\"14\"]{-ms-flex-order:14;order:14}[flex-order-gt-lg=\"15\"]{-ms-flex-order:15;order:15}[flex-order-gt-lg=\"16\"]{-ms-flex-order:16;order:16}[flex-order-gt-lg=\"17\"]{-ms-flex-order:17;order:17}[flex-order-gt-lg=\"18\"]{-ms-flex-order:18;order:18}[flex-order-gt-lg=\"19\"]{-ms-flex-order:19;order:19}[flex-order-gt-lg=\"20\"]{-ms-flex-order:20;order:20}[layout-gt-lg]{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[layout-gt-lg]>*{box-sizing:border-box}[layout-gt-lg=column]{-ms-flex-direction:column;flex-direction:column}[layout-gt-lg=row]{-ms-flex-direction:row;flex-direction:row}[layout-align-gt-lg]{-ms-flex-pack:start;justify-content:flex-start;-ms-flex-line-pack:stretch;align-content:stretch;-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch}[layout-align-gt-lg^=start]{-ms-flex-pack:start;justify-content:flex-start}[layout-align-gt-lg^=center]{-ms-flex-pack:center;justify-content:center}[layout-align-gt-lg^=end]{-ms-flex-pack:end;justify-content:flex-end}[layout-align-gt-lg^=space-around]{-ms-flex-pack:distribute;justify-content:space-around}[layout-align-gt-lg^=space-between]{-ms-flex-pack:justify;justify-content:space-between}[layout-align-gt-lg$=start]{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}[layout-align-gt-lg$=center]{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;max-width:100%}[layout-align-gt-lg$=center]>*{max-width:100%}[layout-align-gt-lg$=end]{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;-ms-flex-line-pack:end;align-content:flex-end}[layout-align-gt-lg=center],[layout-align-gt-lg=end],[layout-align-gt-lg=space-around],[layout-align-gt-lg=space-between],[layout-align-gt-lg=start]{-ms-flex-align:stretch;-ms-grid-row-align:stretch;align-items:stretch;-ms-flex-line-pack:stretch;align-content:stretch}[flex-gt-lg]{-ms-flex:1;flex:1}[flex-gt-lg-start]{margin-bottom:auto}[flex-gt-lg-end]{margin-top:auto}[flex-gt-lg-none]{-ms-flex:0 0 auto;flex:0 0 auto}[flex-gt-lg-initial]{-ms-flex:0 1 auto;flex:0 1 auto}[flex-gt-lg-noshrink]{-ms-flex:1 0 auto;flex:1 0 auto}[flex-gt-lg-auto]{-ms-flex:1 1 auto;flex:1 1 auto}[flex-gt-lg-grow]{-ms-flex:1 1 100%;flex:1 1 100%}[flex-gt-lg],[layout-gt-lg=row]>[flex-gt-lg],[layout=row]>[flex-gt-lg]{max-height:100%}[layout-gt-lg=column]>[flex-gt-lg],[layout=column]>[flex-gt-lg]{max-width:100%}[layout-gt-lg=row]>[flex-gt-lg=\"5\"],[layout-gt-lg=row]>[flex=\"5\"],[layout=row]>[flex-gt-lg=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-width:5%}[layout-gt-lg=column]>[flex-gt-lg=\"5\"],[layout-gt-lg=column]>[flex=\"5\"],[layout=column]>[flex-gt-lg=\"5\"]{-ms-flex:1 1 5%;flex:1 1 5%;max-height:5%}[layout-gt-lg=row]>[flex-gt-lg=\"10\"],[layout-gt-lg=row]>[flex=\"10\"],[layout=row]>[flex-gt-lg=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-width:10%}[layout-gt-lg=column]>[flex-gt-lg=\"10\"],[layout-gt-lg=column]>[flex=\"10\"],[layout=column]>[flex-gt-lg=\"10\"]{-ms-flex:1 1 10%;flex:1 1 10%;max-height:10%}[layout-gt-lg=row]>[flex-gt-lg=\"15\"],[layout-gt-lg=row]>[flex=\"15\"],[layout=row]>[flex-gt-lg=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-width:15%}[layout-gt-lg=column]>[flex-gt-lg=\"15\"],[layout-gt-lg=column]>[flex=\"15\"],[layout=column]>[flex-gt-lg=\"15\"]{-ms-flex:1 1 15%;flex:1 1 15%;max-height:15%}[layout-gt-lg=row]>[flex-gt-lg=\"20\"],[layout-gt-lg=row]>[flex=\"20\"],[layout=row]>[flex-gt-lg=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-width:20%}[layout-gt-lg=column]>[flex-gt-lg=\"20\"],[layout-gt-lg=column]>[flex=\"20\"],[layout=column]>[flex-gt-lg=\"20\"]{-ms-flex:1 1 20%;flex:1 1 20%;max-height:20%}[layout-gt-lg=row]>[flex-gt-lg=\"25\"],[layout-gt-lg=row]>[flex=\"25\"],[layout=row]>[flex-gt-lg=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-width:25%}[layout-gt-lg=column]>[flex-gt-lg=\"25\"],[layout-gt-lg=column]>[flex=\"25\"],[layout=column]>[flex-gt-lg=\"25\"]{-ms-flex:1 1 25%;flex:1 1 25%;max-height:25%}[layout-gt-lg=row]>[flex-gt-lg=\"30\"],[layout-gt-lg=row]>[flex=\"30\"],[layout=row]>[flex-gt-lg=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-width:30%}[layout-gt-lg=column]>[flex-gt-lg=\"30\"],[layout-gt-lg=column]>[flex=\"30\"],[layout=column]>[flex-gt-lg=\"30\"]{-ms-flex:1 1 30%;flex:1 1 30%;max-height:30%}[layout-gt-lg=row]>[flex-gt-lg=\"35\"],[layout-gt-lg=row]>[flex=\"35\"],[layout=row]>[flex-gt-lg=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-width:35%}[layout-gt-lg=column]>[flex-gt-lg=\"35\"],[layout-gt-lg=column]>[flex=\"35\"],[layout=column]>[flex-gt-lg=\"35\"]{-ms-flex:1 1 35%;flex:1 1 35%;max-height:35%}[layout-gt-lg=row]>[flex-gt-lg=\"40\"],[layout-gt-lg=row]>[flex=\"40\"],[layout=row]>[flex-gt-lg=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-width:40%}[layout-gt-lg=column]>[flex-gt-lg=\"40\"],[layout-gt-lg=column]>[flex=\"40\"],[layout=column]>[flex-gt-lg=\"40\"]{-ms-flex:1 1 40%;flex:1 1 40%;max-height:40%}[layout-gt-lg=row]>[flex-gt-lg=\"45\"],[layout-gt-lg=row]>[flex=\"45\"],[layout=row]>[flex-gt-lg=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-width:45%}[layout-gt-lg=column]>[flex-gt-lg=\"45\"],[layout-gt-lg=column]>[flex=\"45\"],[layout=column]>[flex-gt-lg=\"45\"]{-ms-flex:1 1 45%;flex:1 1 45%;max-height:45%}[layout-gt-lg=row]>[flex-gt-lg=\"50\"],[layout-gt-lg=row]>[flex=\"50\"],[layout=row]>[flex-gt-lg=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%}[layout-gt-lg=column]>[flex-gt-lg=\"50\"],[layout-gt-lg=column]>[flex=\"50\"],[layout=column]>[flex-gt-lg=\"50\"]{-ms-flex:1 1 50%;flex:1 1 50%;max-height:50%}[layout-gt-lg=row]>[flex-gt-lg=\"55\"],[layout-gt-lg=row]>[flex=\"55\"],[layout=row]>[flex-gt-lg=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-width:55%}[layout-gt-lg=column]>[flex-gt-lg=\"55\"],[layout-gt-lg=column]>[flex=\"55\"],[layout=column]>[flex-gt-lg=\"55\"]{-ms-flex:1 1 55%;flex:1 1 55%;max-height:55%}[layout-gt-lg=row]>[flex-gt-lg=\"60\"],[layout-gt-lg=row]>[flex=\"60\"],[layout=row]>[flex-gt-lg=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-width:60%}[layout-gt-lg=column]>[flex-gt-lg=\"60\"],[layout-gt-lg=column]>[flex=\"60\"],[layout=column]>[flex-gt-lg=\"60\"]{-ms-flex:1 1 60%;flex:1 1 60%;max-height:60%}[layout-gt-lg=row]>[flex-gt-lg=\"65\"],[layout-gt-lg=row]>[flex=\"65\"],[layout=row]>[flex-gt-lg=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-width:65%}[layout-gt-lg=column]>[flex-gt-lg=\"65\"],[layout-gt-lg=column]>[flex=\"65\"],[layout=column]>[flex-gt-lg=\"65\"]{-ms-flex:1 1 65%;flex:1 1 65%;max-height:65%}[layout-gt-lg=row]>[flex-gt-lg=\"70\"],[layout-gt-lg=row]>[flex=\"70\"],[layout=row]>[flex-gt-lg=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-width:70%}[layout-gt-lg=column]>[flex-gt-lg=\"70\"],[layout-gt-lg=column]>[flex=\"70\"],[layout=column]>[flex-gt-lg=\"70\"]{-ms-flex:1 1 70%;flex:1 1 70%;max-height:70%}[layout-gt-lg=row]>[flex-gt-lg=\"75\"],[layout-gt-lg=row]>[flex=\"75\"],[layout=row]>[flex-gt-lg=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-width:75%}[layout-gt-lg=column]>[flex-gt-lg=\"75\"],[layout-gt-lg=column]>[flex=\"75\"],[layout=column]>[flex-gt-lg=\"75\"]{-ms-flex:1 1 75%;flex:1 1 75%;max-height:75%}[layout-gt-lg=row]>[flex-gt-lg=\"80\"],[layout-gt-lg=row]>[flex=\"80\"],[layout=row]>[flex-gt-lg=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-width:80%}[layout-gt-lg=column]>[flex-gt-lg=\"80\"],[layout-gt-lg=column]>[flex=\"80\"],[layout=column]>[flex-gt-lg=\"80\"]{-ms-flex:1 1 80%;flex:1 1 80%;max-height:80%}[layout-gt-lg=row]>[flex-gt-lg=\"85\"],[layout-gt-lg=row]>[flex=\"85\"],[layout=row]>[flex-gt-lg=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-width:85%}[layout-gt-lg=column]>[flex-gt-lg=\"85\"],[layout-gt-lg=column]>[flex=\"85\"],[layout=column]>[flex-gt-lg=\"85\"]{-ms-flex:1 1 85%;flex:1 1 85%;max-height:85%}[layout-gt-lg=row]>[flex-gt-lg=\"90\"],[layout-gt-lg=row]>[flex=\"90\"],[layout=row]>[flex-gt-lg=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-width:90%}[layout-gt-lg=column]>[flex-gt-lg=\"90\"],[layout-gt-lg=column]>[flex=\"90\"],[layout=column]>[flex-gt-lg=\"90\"]{-ms-flex:1 1 90%;flex:1 1 90%;max-height:90%}[layout-gt-lg=row]>[flex-gt-lg=\"95\"],[layout-gt-lg=row]>[flex=\"95\"],[layout=row]>[flex-gt-lg=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-width:95%}[layout-gt-lg=column]>[flex-gt-lg=\"95\"],[layout-gt-lg=column]>[flex=\"95\"],[layout=column]>[flex-gt-lg=\"95\"]{-ms-flex:1 1 95%;flex:1 1 95%;max-height:95%}[layout-gt-lg=row]>[flex-gt-lg=\"100\"],[layout-gt-lg=row]>[flex=\"100\"],[layout=row]>[flex-gt-lg=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%}[layout-gt-lg=column]>[flex-gt-lg=\"100\"],[layout-gt-lg=column]>[flex=\"100\"],[layout=column]>[flex-gt-lg=\"100\"]{-ms-flex:1 1 100%;flex:1 1 100%;max-height:100%}[layout-gt-lg=row]>[flex-gt-lg=\"33\"],[layout-gt-lg=row]>[flex=\"33\"],[layout=row]>[flex-gt-lg=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-width:33.33%}[layout-gt-lg=column]>[flex-gt-lg=\"33\"],[layout-gt-lg=column]>[flex=\"33\"],[layout=column]>[flex-gt-lg=\"33\"]{-ms-flex:1 1 33.33%;flex:1 1 33.33%;max-height:33.33%}[layout-gt-lg=row]>[flex-gt-lg=\"66\"],[layout-gt-lg=row]>[flex=\"66\"],[layout=row]>[flex-gt-lg=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-width:66.66%}[layout-gt-lg=column]>[flex-gt-lg=\"66\"],[layout-gt-lg=column]>[flex=\"66\"],[layout=column]>[flex-gt-lg=\"66\"]{-ms-flex:1 1 66.66%;flex:1 1 66.66%;max-height:66.66%}[hide-gt-lg]{display:none}}[layout-padding]>[flex-sm]{padding:.25em}[layout-padding],[layout-padding]>[flex-gt-sm],[layout-padding]>[flex-md],[layout-padding]>[flex]{padding:.5em}[layout-padding]>[flex-gt-md],[layout-padding]>[flex-lg]{padding:1em}[layout-margin]>[flex-sm]{margin:.25em}[layout-margin],[layout-margin]>[flex-gt-sm],[layout-margin]>[flex-md],[layout-margin]>[flex]{margin:.5em}[layout-margin]>[flex-gt-md],[layout-margin]>[flex-lg]{margin:1em}[layout-nowrap]{-ms-flex-wrap:nowrap;flex-wrap:nowrap}.button.outline{display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:auto;margin-top:1em;border-radius:.1em;font-size:1em;cursor:pointer;line-height:1;text-transform:uppercase;transition:all .33s ease;font-family:Marvel,verdana;background-color:transparent;color:#fff;border:1px solid #fff}.button.outline:hover{background-color:#fff;color:#2e8ab8}.button.reverse{display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:auto;margin-top:1em;border-radius:.1em;font-size:1em;cursor:pointer;line-height:1;text-transform:uppercase;transition:all .33s ease;font-family:Marvel,verdana;background-color:transparent;color:#2e8ab8;border:1px solid #2e8ab8}.button.reverse:hover{color:#fff;background-color:#2e8ab8}::-webkit-scrollbar{width:.5em}::-webkit-scrollbar-thumb{background:hsla(0,0%,100%,.5)}::-webkit-scrollbar-track{background:rgba(59,72,79,.5)}code,pre{font-family:Cousine,monospace}body,html{background-color:#fff;min-width:320px;font-family:Marvel,verdana;font-weight:300;font-size:16px;line-height:1.5em;color:#3b484f;margin:0;padding:0;height:100%;width:100%}table{margin:1em 0 2em;border-spacing:0;width:100%}table th,table thead{background:#f2f2f2}table th{font-family:Marvel,verdana,sans-serif;font-weight:400;text-align:left;vertical-align:top}table tr td,table tr th{vertical-align:top;padding:.75em .75em .25em .5em;border-bottom:1px solid #e6e6e6}h1,h2,h3,h4,h5,h6{margin:0;margin:1em 0;line-height:1.25em;text-transform:none;font-family:Marvel,sans-serif;font-weight:400}h1{font-size:2.5em;margin:0}h2{font-size:1.5em}h2,h3,h3 a{color:#2e8ab8}h3,h3 a{font-size:1.15em}h4{font-size:1rem;color:#2e8ab8}hr{border:none;width:100%;height:.1rem;background-color:#bcc7cd}hr,p{margin:1em 0}p{padding:0;line-height:1.5em;word-wrap:break-word}p:first-child{margin-top:0}p:last-child{margin-bottom:0}a{position:relative;transition:all .33s ease;text-decoration:none;cursor:pointer;outline:0}a,a:hover{color:#7e1eae}a img{border:none;outline:none}a p,a span{cursor:pointer}img{max-width:100%;height:auto}ul{list-style:square}ol,ul{padding:0 0 0 1em;margin-bottom:0}ol{list-style-type:decimal}ol ol{list-style-type:lower-alpha}b,strong{font-weight:400;font-family:Marvel,verdana,sans-serif}fieldset{margin:0;padding:0;border:0}input[type=submit]{display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:auto;margin-top:1em;border-radius:.1em;font-size:1em;cursor:pointer;line-height:1;text-transform:uppercase;transition:all .33s ease;font-family:Marvel,verdana;background-color:transparent;color:#2e8ab8;border:1px solid #2e8ab8;margin:0}input[type=submit]:hover{color:#fff;background-color:#2e8ab8}pre[class*=language-]:after,pre[class*=language-]:before{content:normal}code[class*=language-],pre[class*=language-]{font-family:Cousine,monospace}body{background:#fff;min-width:320px}img{max-width:100%}footer{padding:2em 0;background-color:#3b484f;width:100%;border-bottom:.25em solid rgba(59,72,79,.2);padding-top:medium;padding-bottom:medium;padding-top:2em;padding-bottom:2em;color:#fff}footer>*{margin:0 auto}@media screen and (max-width:600px){footer>*{padding-left:5%;padding-right:5%}}@media screen and (min-width:600px){footer>*{width:493.33333333px}}@media screen and (min-width:960px){footer>*{width:800px}}@media screen and (min-width:1200px){footer>*{width:880px}}footer a{text-shadow:0 0 0 #fff}.github-corner{position:fixed;right:0;z-index:100}@media screen and (max-width:600px){.github-corner{display:none}}*{box-sizing:border-box}nav{background:#2e8ab8;z-index:100;width:100%;box-shadow:inset 0 -.33em 0 rgba(59,72,79,.2)}@media screen and (min-width:600px){nav{position:fixed}}nav a{display:inline-block;transition:all .5s ease;text-decoration:none;color:#fff;padding:1em 2em}@media screen and (max-width:320px){nav a{display:block}}nav a.active,nav a:hover{background:#fff;color:#2e8ab8}article{padding:2em 0;background-color:#fff;width:100%;border-bottom:.25em solid rgba(59,72,79,.2);padding-top:medium;padding-bottom:medium;padding-top:2em;padding-bottom:2em;padding:0 1em;padding-top:5em}article>*{margin:0 auto}@media screen and (max-width:600px){article>*{padding-left:5%;padding-right:5%}}@media screen and (min-width:600px){article>*{width:493.33333333px}}@media screen and (min-width:960px){article>*{width:800px}}@media screen and (min-width:1200px){article>*{width:880px}}article div{padding:1em 0}article>h1{font-size:1.2rem;padding:0 0 1em;border-bottom:1px solid #2e8ab8;text-transform:uppercase;font-weight:400}article>h1:before{content:'// ';color:#2e8ab8}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 7 */
+/* 14 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -175,7 +185,7 @@
 	};
 
 /***/ },
-/* 8 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -427,7 +437,7 @@
 
 
 /***/ },
-/* 9 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -2951,20 +2961,20 @@
 	  riot.Tag = Tag;
 	  // support CommonJS, AMD & browser
 	  /* istanbul ignore next */
-	  if (( false ? 'undefined' : _typeof(exports)) === T_OBJECT) module.exports = riot;else if (( false ? 'undefined' : _typeof(__webpack_require__(10))) === T_FUNCTION && _typeof(__webpack_require__(11)) !== T_UNDEF) !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	  if (( false ? 'undefined' : _typeof(exports)) === T_OBJECT) module.exports = riot;else if (( false ? 'undefined' : _typeof(__webpack_require__(17))) === T_FUNCTION && _typeof(__webpack_require__(18)) !== T_UNDEF) !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    return riot;
 	  }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else window.riot = riot;
 	})(typeof window != 'undefined' ? window : void 0);
 
 /***/ },
-/* 10 */
+/* 17 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 11 */
+/* 18 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
@@ -2972,12 +2982,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ },
-/* 12 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(riot) {'use strict';
 	
-	riot.tag2('app', '<a href="https://github.com/MartinMuzatko/webpack-talk" class="github-corner"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a> <nav> <a href="#{item}" class="{active: name == item}" each="{item in items}">{item}</a> </nav> <article> <h1>{name}</h1> <div name="content"> <yield> </div> </article>', '.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}', '', function (opts) {
+	riot.tag2('app', '<a href="https://github.com/MartinMuzatko/webpack-talk" class="github-corner"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a> <nav> <a href="#{item}" class="{active: name == item}" each="{item in items}">{item}</a> </nav> <article> <h1> {name}</h1> <div name="content"> <yield> </div> </article> <footer> <div> <p> Coded with <span style="color: red">♥</span> by <a href="https://github.com/MartinMuzatko">@MartinMuzatko</a> </p> </div> </footer>', '.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}', '', function (opts) {
 	    var _this = this;
 	
 	    this.items = ['index', 'loader', 'plugin', 'thanks'];
@@ -2985,26 +2995,27 @@
 	        riot.route.start(true);
 	        riot.route(function (name) {
 	            if (name == 'index' || !name) {
-	                _this.content.innerHTML = __webpack_require__(4);
+	                _this.content.innerHTML = __webpack_require__(11);
 	            } else {
-	                _this.content.innerHTML = __webpack_require__(13)("./" + name + '.md');
+	                _this.content.innerHTML = __webpack_require__(20)("./" + name + '.md');
 	            }
 	            _this.name = name;
+	            riot.mount('loader, xs');
 	            _this.update();
 	        });
 	        riot.route('index');
 	    });
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ },
-/* 13 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./loader.md": 14,
-		"./plugin.md": 15,
-		"./thanks.md": 16
+		"./loader.md": 21,
+		"./plugin.md": 22,
+		"./thanks.md": 23
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -3017,29 +3028,837 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 13;
+	webpackContext.id = 20;
 
 
 /***/ },
-/* 14 */
+/* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "<h2 id=\"what-is-a-loader-\">What is a loader?</h2>\n<p>Loading modules - Webpack loader chains <code>style!css!less</code></p>\n<ul>\n<li>Formats</li>\n<li>Preloaders, Postloaders</li>\n</ul>\n<p>Example</p>\n<pre class=\"language-js\"><code class=\"language-js\"><span class=\"token keyword\" >var</span> webpack <span class=\"token operator\" >=</span> <span class=\"token function\" >require</span><span class=\"token punctuation\" >(</span><span class=\"token string\" >'webpack'</span><span class=\"token punctuation\" >)</span>\n\nmodule<span class=\"token punctuation\" >.</span>exports <span class=\"token operator\" >=</span> <span class=\"token punctuation\" >{</span>\n    entry<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./index.js'</span><span class=\"token punctuation\" >,</span>\n    output<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        path<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./'</span><span class=\"token punctuation\" >,</span>\n        filename<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'bundle.js'</span><span class=\"token punctuation\" >,</span>\n        sourceMapFilename<span class=\"token punctuation\" >:</span> <span class=\"token string\" >\"[name].js.map\"</span><span class=\"token punctuation\" >,</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    module<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        preLoaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'riotjs'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'eslint!source-map'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >]</span><span class=\"token punctuation\" >,</span>\n        loaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.md$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'html!markdown'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$|\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'babel'</span><span class=\"token punctuation\" >,</span> query<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span> presets<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'es2015-riot'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.less$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'style!css!less'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >]</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    plugins<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n        <span class=\"token keyword\" >new</span> <span class=\"token class-name\" >webpack<span class=\"token punctuation\" >.</span>ProvidePlugin</span><span class=\"token punctuation\" >(</span><span class=\"token punctuation\" >{</span>\n            riot<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'riot'</span>\n        <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >)</span>\n    <span class=\"token punctuation\" >]</span><span class=\"token punctuation\" >,</span>\n    eslint<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        configFile<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./.eslintrc'</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    devtool<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'source-map'</span>\n<span class=\"token punctuation\" >}</span></code></pre>";
+	module.exports = "<h1 id=\"what-is-a-loader-\">What is a loader?</h1>\n<p>A loader in the first place, makes sure that the resource is added the the main bundle.</p>\n<ul>\n<li>json</li>\n<li>javascript</li>\n<li>css</li>\n<li>html</li>\n</ul>\n<h2 id=\"anatomy-of-a-loader\">Anatomy of a Loader</h2>\n<loader>{ test: /.less$/, loader: &#39;style!css!less&#39;}</loader>\n\n<p>Look for all files that end with <code>less</code>.</p>\n<ul>\n<li>Preprocess the files with <a href=\"https://github.com/webpack/less-loader\"><strong>less</strong></a></li>\n<li>turn them into <a href=\"https://github.com/webpack/css-loader\"><strong>css</strong></a><ul>\n<li>resolving <code>import</code> statements into <code>require</code></li>\n<li>performing css-level modifications (minimizing)</li>\n</ul>\n</li>\n<li>bundle them as inline <a href=\"https://github.com/webpack/style-loader\"><strong>style</strong></a>.</li>\n</ul>\n<p>There are three loaders here, because we have to tell Webpack, that we are going to use the result as style. We could also return it as string to our JS application if we&#39;d like to.</p>\n<p>Loaders can be chained, in order to pass a file through various processing steps.</p>\n<pre class=\"language-js\"><code class=\"language-js\">module<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n    preLoaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n        <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'riotjs'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'eslint!source-map'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    <span class=\"token punctuation\" >]</span><span class=\"token punctuation\" >,</span>\n    loaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n        <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.md$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'html!markdown'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$|\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'babel'</span><span class=\"token punctuation\" >,</span> query<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span> presets<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'es2015-riot'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.less$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'style!css!less'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    <span class=\"token punctuation\" >]</span>\n<span class=\"token punctuation\" >}</span></code></pre><p>Loading modules - Webpack loader chains <code>style!css!less</code></p>\n<ul>\n<li>Formats</li>\n<li>Preloaders, Postloaders</li>\n</ul>\n<p>Example</p>\n<pre class=\"language-js\"><code class=\"language-js\"><span class=\"token keyword\" >var</span> webpack <span class=\"token operator\" >=</span> <span class=\"token function\" >require</span><span class=\"token punctuation\" >(</span><span class=\"token string\" >'webpack'</span><span class=\"token punctuation\" >)</span>\n\nmodule<span class=\"token punctuation\" >.</span>exports <span class=\"token operator\" >=</span> <span class=\"token punctuation\" >{</span>\n    entry<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./index.js'</span><span class=\"token punctuation\" >,</span>\n    output<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        path<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./'</span><span class=\"token punctuation\" >,</span>\n        filename<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'bundle.js'</span><span class=\"token punctuation\" >,</span>\n        sourceMapFilename<span class=\"token punctuation\" >:</span> <span class=\"token string\" >\"[name].js.map\"</span><span class=\"token punctuation\" >,</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    module<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        preLoaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'riotjs'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'eslint!source-map'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >]</span><span class=\"token punctuation\" >,</span>\n        loaders<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.md$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'html!markdown'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.html$|\\.js$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'babel'</span><span class=\"token punctuation\" >,</span> query<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span> presets<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'es2015-riot'</span> <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span> test<span class=\"token punctuation\" >:</span> <span class=\"token regex\" >/\\.less$/</span><span class=\"token punctuation\" >,</span> loader<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'style!css!less'</span><span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n        <span class=\"token punctuation\" >]</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    plugins<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n        <span class=\"token keyword\" >new</span> <span class=\"token class-name\" >webpack<span class=\"token punctuation\" >.</span>ProvidePlugin</span><span class=\"token punctuation\" >(</span><span class=\"token punctuation\" >{</span>\n            riot<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'riot'</span>\n        <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >)</span>\n    <span class=\"token punctuation\" >]</span><span class=\"token punctuation\" >,</span>\n    eslint<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >{</span>\n        configFile<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'./.eslintrc'</span>\n    <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n    devtool<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'source-map'</span>\n<span class=\"token punctuation\" >}</span></code></pre>";
 
 /***/ },
-/* 15 */
+/* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1 id=\"what-is-a-plugin-\">What is a plugin?</h1>\n";
+	module.exports = "<h1 id=\"what-is-a-plugin-\">What is a plugin?</h1>\n<p>A <a href=\"https://webpack.github.io/docs/list-of-plugins.html\">plugin</a> can provide additional functionality as listed below.</p>\n<p>Tasks like</p>\n<ul>\n<li>Polyfilling</li>\n<li>Additional dev servers</li>\n<li>copying contentbases</li>\n<li>Minifying and purifying (removing code that is never executed)</li>\n<li>Image compression</li>\n<li>Offline mode</li>\n<li>Providing Plugins globally</li>\n</ul>\n<h2 id=\"implementing-a-plugin\">Implementing a plugin</h2>\n<p>Plugins have to be required.</p>\n<pre class=\"language-js\"><code class=\"language-js\">\n<span class=\"token keyword\" >var</span> BrowserSyncPlugin <span class=\"token operator\" >=</span> <span class=\"token function\" >require</span><span class=\"token punctuation\" >(</span><span class=\"token string\" >'browser-sync-webpack-plugin'</span><span class=\"token punctuation\" >)</span>\n\nmodule<span class=\"token punctuation\" >.</span>exports <span class=\"token operator\" >=</span> <span class=\"token punctuation\" >{</span>\n    <span class=\"token punctuation\" >.</span><span class=\"token punctuation\" >.</span><span class=\"token punctuation\" >.</span>\n    <span class=\"token punctuation\" >.</span><span class=\"token punctuation\" >.</span><span class=\"token punctuation\" >.</span>\n    <span class=\"token punctuation\" >.</span><span class=\"token punctuation\" >.</span><span class=\"token punctuation\" >.</span>\n    plugins<span class=\"token punctuation\" >:</span> <span class=\"token punctuation\" >[</span>\n        <span class=\"token keyword\" >new</span> <span class=\"token class-name\" >BrowserSyncPlugin</span><span class=\"token punctuation\" >(</span>\n            <span class=\"token punctuation\" >{</span>\n                host<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'localhost'</span><span class=\"token punctuation\" >,</span>\n                port<span class=\"token punctuation\" >:</span> <span class=\"token number\" >8081</span><span class=\"token punctuation\" >,</span>\n                proxy<span class=\"token punctuation\" >:</span> <span class=\"token string\" >'http://localhost:8080/'</span>\n            <span class=\"token punctuation\" >}</span><span class=\"token punctuation\" >,</span>\n            <span class=\"token punctuation\" >{</span>\n                reload<span class=\"token punctuation\" >:</span> <span class=\"token boolean\" >true</span>\n            <span class=\"token punctuation\" >}</span>\n        <span class=\"token punctuation\" >)</span>\n    <span class=\"token punctuation\" >]</span>\n<span class=\"token punctuation\" >}</span></code></pre>";
 
 /***/ },
-/* 16 */
+/* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "<h2 id=\"talk-by-martin-muzatko-\">Talk by <a href=\"\">Martin Muzatko</a></h2>\n<p>Resources and Talk material: <a href=\"https://martinmuzatko.github.io/webpack-talk/\">https://martinmuzatko.github.io/webpack-talk/</a>\nSource: </p>\n";
+	module.exports = "<h2 id=\"talk-by-martin-muzatko-https-twitter-com-martinmuzatko-\">Talk by <a href=\"https://twitter.com/martinmuzatko\">Martin Muzatko</a></h2>\n<p>Resources and Talk material: <a href=\"http://www.happy-css.com\">happy-css.com</a></p>\n<p>Source: <a href=\"https://github.com/MartinMuzatko/webpack-talk\">https://github.com/MartinMuzatko/webpack-talk</a></p>\n";
 
 /***/ },
-/* 17 */
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(riot) {'use strict';
+	
+	riot.tag2('loader', '<code><pre name="code">\n    </pre></code> <div name="legend"> </div> <div name="yield"><yield></div>', '', '', function (opts) {
+	    var _this = this;
+	
+	    this.json = this.yield.innerHTML;
+	
+	    this.on('mount', function () {
+	        _this.prism = __webpack_require__(25);
+	        _this.code.innerHTML = _this.prism.highlight(_this.json, _this.prism.languages.js);
+	        _this.yield.hidden = true;
+	    });
+	
+	    this.toJSON = function (json) {
+	        var jsonString = json.replace(/([\$\w]+)\s*:/g, function (_, $1) {
+	            return '"' + $1 + '":';
+	        }).replace(/(\/.+\/)/g, function (_, $1) {
+	            return '"' + $1 + '":';
+	        }).replace(/'([^']+)'/g, function (_, $1) {
+	            return '"' + $1 + '"';
+	        });
+	
+	        return JSON.parse(jsonString);
+	    };
+	});
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+	
+	/* **********************************************
+	     Begin prism-core.js
+	********************************************** */
+	
+	var _self = typeof window !== 'undefined' ? window // if in browser
+	: typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope ? self // if in worker
+	: {} // if in node js
+	;
+	
+	/**
+	 * Prism: Lightweight, robust, elegant syntax highlighting
+	 * MIT license http://www.opensource.org/licenses/mit-license.php/
+	 * @author Lea Verou http://lea.verou.me
+	 */
+	
+	var Prism = function () {
+	
+		// Private helper vars
+		var lang = /\blang(?:uage)?-(\w+)\b/i;
+		var uniqueId = 0;
+	
+		var _ = _self.Prism = {
+			util: {
+				encode: function encode(tokens) {
+					if (tokens instanceof Token) {
+						return new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);
+					} else if (_.util.type(tokens) === 'Array') {
+						return tokens.map(_.util.encode);
+					} else {
+						return tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\u00a0/g, ' ');
+					}
+				},
+	
+				type: function type(o) {
+					return Object.prototype.toString.call(o).match(/\[object (\w+)\]/)[1];
+				},
+	
+				objId: function objId(obj) {
+					if (!obj['__id']) {
+						Object.defineProperty(obj, '__id', { value: ++uniqueId });
+					}
+					return obj['__id'];
+				},
+	
+				// Deep clone a language definition (e.g. to extend it)
+				clone: function clone(o) {
+					var type = _.util.type(o);
+	
+					switch (type) {
+						case 'Object':
+							var clone = {};
+	
+							for (var key in o) {
+								if (o.hasOwnProperty(key)) {
+									clone[key] = _.util.clone(o[key]);
+								}
+							}
+	
+							return clone;
+	
+						case 'Array':
+							// Check for existence for IE8
+							return o.map && o.map(function (v) {
+								return _.util.clone(v);
+							});
+					}
+	
+					return o;
+				}
+			},
+	
+			languages: {
+				extend: function extend(id, redef) {
+					var lang = _.util.clone(_.languages[id]);
+	
+					for (var key in redef) {
+						lang[key] = redef[key];
+					}
+	
+					return lang;
+				},
+	
+				/**
+	    * Insert a token before another token in a language literal
+	    * As this needs to recreate the object (we cannot actually insert before keys in object literals),
+	    * we cannot just provide an object, we need anobject and a key.
+	    * @param inside The key (or language id) of the parent
+	    * @param before The key to insert before. If not provided, the function appends instead.
+	    * @param insert Object with the key/value pairs to insert
+	    * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.
+	    */
+				insertBefore: function insertBefore(inside, before, insert, root) {
+					root = root || _.languages;
+					var grammar = root[inside];
+	
+					if (arguments.length == 2) {
+						insert = arguments[1];
+	
+						for (var newToken in insert) {
+							if (insert.hasOwnProperty(newToken)) {
+								grammar[newToken] = insert[newToken];
+							}
+						}
+	
+						return grammar;
+					}
+	
+					var ret = {};
+	
+					for (var token in grammar) {
+	
+						if (grammar.hasOwnProperty(token)) {
+	
+							if (token == before) {
+	
+								for (var newToken in insert) {
+	
+									if (insert.hasOwnProperty(newToken)) {
+										ret[newToken] = insert[newToken];
+									}
+								}
+							}
+	
+							ret[token] = grammar[token];
+						}
+					}
+	
+					// Update references in other language definitions
+					_.languages.DFS(_.languages, function (key, value) {
+						if (value === root[inside] && key != inside) {
+							this[key] = ret;
+						}
+					});
+	
+					return root[inside] = ret;
+				},
+	
+				// Traverse a language definition with Depth First Search
+				DFS: function DFS(o, callback, type, visited) {
+					visited = visited || {};
+					for (var i in o) {
+						if (o.hasOwnProperty(i)) {
+							callback.call(o, i, o[i], type || i);
+	
+							if (_.util.type(o[i]) === 'Object' && !visited[_.util.objId(o[i])]) {
+								visited[_.util.objId(o[i])] = true;
+								_.languages.DFS(o[i], callback, null, visited);
+							} else if (_.util.type(o[i]) === 'Array' && !visited[_.util.objId(o[i])]) {
+								visited[_.util.objId(o[i])] = true;
+								_.languages.DFS(o[i], callback, i, visited);
+							}
+						}
+					}
+				}
+			},
+			plugins: {},
+	
+			highlightAll: function highlightAll(async, callback) {
+				var env = {
+					callback: callback,
+					selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+				};
+	
+				_.hooks.run("before-highlightall", env);
+	
+				var elements = env.elements || document.querySelectorAll(env.selector);
+	
+				for (var i = 0, element; element = elements[i++];) {
+					_.highlightElement(element, async === true, env.callback);
+				}
+			},
+	
+			highlightElement: function highlightElement(element, async, callback) {
+				// Find language
+				var language,
+				    grammar,
+				    parent = element;
+	
+				while (parent && !lang.test(parent.className)) {
+					parent = parent.parentNode;
+				}
+	
+				if (parent) {
+					language = (parent.className.match(lang) || [, ''])[1].toLowerCase();
+					grammar = _.languages[language];
+				}
+	
+				// Set language on the element, if not present
+				element.className = element.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+	
+				// Set language on the parent, for styling
+				parent = element.parentNode;
+	
+				if (/pre/i.test(parent.nodeName)) {
+					parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+				}
+	
+				var code = element.textContent;
+	
+				var env = {
+					element: element,
+					language: language,
+					grammar: grammar,
+					code: code
+				};
+	
+				_.hooks.run('before-sanity-check', env);
+	
+				if (!env.code || !env.grammar) {
+					_.hooks.run('complete', env);
+					return;
+				}
+	
+				_.hooks.run('before-highlight', env);
+	
+				if (async && _self.Worker) {
+					var worker = new Worker(_.filename);
+	
+					worker.onmessage = function (evt) {
+						env.highlightedCode = evt.data;
+	
+						_.hooks.run('before-insert', env);
+	
+						env.element.innerHTML = env.highlightedCode;
+	
+						callback && callback.call(env.element);
+						_.hooks.run('after-highlight', env);
+						_.hooks.run('complete', env);
+					};
+	
+					worker.postMessage(JSON.stringify({
+						language: env.language,
+						code: env.code,
+						immediateClose: true
+					}));
+				} else {
+					env.highlightedCode = _.highlight(env.code, env.grammar, env.language);
+	
+					_.hooks.run('before-insert', env);
+	
+					env.element.innerHTML = env.highlightedCode;
+	
+					callback && callback.call(element);
+	
+					_.hooks.run('after-highlight', env);
+					_.hooks.run('complete', env);
+				}
+			},
+	
+			highlight: function highlight(text, grammar, language) {
+				var tokens = _.tokenize(text, grammar);
+				return Token.stringify(_.util.encode(tokens), language);
+			},
+	
+			tokenize: function tokenize(text, grammar, language) {
+				var Token = _.Token;
+	
+				var strarr = [text];
+	
+				var rest = grammar.rest;
+	
+				if (rest) {
+					for (var token in rest) {
+						grammar[token] = rest[token];
+					}
+	
+					delete grammar.rest;
+				}
+	
+				tokenloop: for (var token in grammar) {
+					if (!grammar.hasOwnProperty(token) || !grammar[token]) {
+						continue;
+					}
+	
+					var patterns = grammar[token];
+					patterns = _.util.type(patterns) === "Array" ? patterns : [patterns];
+	
+					for (var j = 0; j < patterns.length; ++j) {
+						var pattern = patterns[j],
+						    inside = pattern.inside,
+						    lookbehind = !!pattern.lookbehind,
+						    greedy = !!pattern.greedy,
+						    lookbehindLength = 0,
+						    alias = pattern.alias;
+	
+						pattern = pattern.pattern || pattern;
+	
+						for (var i = 0; i < strarr.length; i++) {
+							// Don’t cache length as it changes during the loop
+	
+							var str = strarr[i];
+	
+							if (strarr.length > text.length) {
+								// Something went terribly wrong, ABORT, ABORT!
+								break tokenloop;
+							}
+	
+							if (str instanceof Token) {
+								continue;
+							}
+	
+							pattern.lastIndex = 0;
+	
+							var match = pattern.exec(str),
+							    delNum = 1;
+	
+							// Greedy patterns can override/remove up to two previously matched tokens
+							if (!match && greedy && i != strarr.length - 1) {
+								// Reconstruct the original text using the next two tokens
+								var nextToken = strarr[i + 1].matchedStr || strarr[i + 1],
+								    combStr = str + nextToken;
+	
+								if (i < strarr.length - 2) {
+									combStr += strarr[i + 2].matchedStr || strarr[i + 2];
+								}
+	
+								// Try the pattern again on the reconstructed text
+								pattern.lastIndex = 0;
+								match = pattern.exec(combStr);
+								if (!match) {
+									continue;
+								}
+	
+								var from = match.index + (lookbehind ? match[1].length : 0);
+								// To be a valid candidate, the new match has to start inside of str
+								if (from >= str.length) {
+									continue;
+								}
+								var to = match.index + match[0].length,
+								    len = str.length + nextToken.length;
+	
+								// Number of tokens to delete and replace with the new match
+								delNum = 3;
+	
+								if (to <= len) {
+									if (strarr[i + 1].greedy) {
+										continue;
+									}
+									delNum = 2;
+									combStr = combStr.slice(0, len);
+								}
+								str = combStr;
+							}
+	
+							if (!match) {
+								continue;
+							}
+	
+							if (lookbehind) {
+								lookbehindLength = match[1].length;
+							}
+	
+							var from = match.index + lookbehindLength,
+							    match = match[0].slice(lookbehindLength),
+							    to = from + match.length,
+							    before = str.slice(0, from),
+							    after = str.slice(to);
+	
+							var args = [i, delNum];
+	
+							if (before) {
+								args.push(before);
+							}
+	
+							var wrapped = new Token(token, inside ? _.tokenize(match, inside) : match, alias, match, greedy);
+	
+							args.push(wrapped);
+	
+							if (after) {
+								args.push(after);
+							}
+	
+							Array.prototype.splice.apply(strarr, args);
+						}
+					}
+				}
+	
+				return strarr;
+			},
+	
+			hooks: {
+				all: {},
+	
+				add: function add(name, callback) {
+					var hooks = _.hooks.all;
+	
+					hooks[name] = hooks[name] || [];
+	
+					hooks[name].push(callback);
+				},
+	
+				run: function run(name, env) {
+					var callbacks = _.hooks.all[name];
+	
+					if (!callbacks || !callbacks.length) {
+						return;
+					}
+	
+					for (var i = 0, callback; callback = callbacks[i++];) {
+						callback(env);
+					}
+				}
+			}
+		};
+	
+		var Token = _.Token = function (type, content, alias, matchedStr, greedy) {
+			this.type = type;
+			this.content = content;
+			this.alias = alias;
+			// Copy of the full string this token was created from
+			this.matchedStr = matchedStr || null;
+			this.greedy = !!greedy;
+		};
+	
+		Token.stringify = function (o, language, parent) {
+			if (typeof o == 'string') {
+				return o;
+			}
+	
+			if (_.util.type(o) === 'Array') {
+				return o.map(function (element) {
+					return Token.stringify(element, language, o);
+				}).join('');
+			}
+	
+			var env = {
+				type: o.type,
+				content: Token.stringify(o.content, language, parent),
+				tag: 'span',
+				classes: ['token', o.type],
+				attributes: {},
+				language: language,
+				parent: parent
+			};
+	
+			if (env.type == 'comment') {
+				env.attributes['spellcheck'] = 'true';
+			}
+	
+			if (o.alias) {
+				var aliases = _.util.type(o.alias) === 'Array' ? o.alias : [o.alias];
+				Array.prototype.push.apply(env.classes, aliases);
+			}
+	
+			_.hooks.run('wrap', env);
+	
+			var attributes = '';
+	
+			for (var name in env.attributes) {
+				attributes += (attributes ? ' ' : '') + name + '="' + (env.attributes[name] || '') + '"';
+			}
+	
+			return '<' + env.tag + ' class="' + env.classes.join(' ') + '" ' + attributes + '>' + env.content + '</' + env.tag + '>';
+		};
+	
+		if (!_self.document) {
+			if (!_self.addEventListener) {
+				// in Node.js
+				return _self.Prism;
+			}
+			// In worker
+			_self.addEventListener('message', function (evt) {
+				var message = JSON.parse(evt.data),
+				    lang = message.language,
+				    code = message.code,
+				    immediateClose = message.immediateClose;
+	
+				_self.postMessage(_.highlight(code, _.languages[lang], lang));
+				if (immediateClose) {
+					_self.close();
+				}
+			}, false);
+	
+			return _self.Prism;
+		}
+	
+		//Get current script and highlight
+		var script = document.currentScript || [].slice.call(document.getElementsByTagName("script")).pop();
+	
+		if (script) {
+			_.filename = script.src;
+	
+			if (document.addEventListener && !script.hasAttribute('data-manual')) {
+				if (document.readyState !== "loading") {
+					requestAnimationFrame(_.highlightAll, 0);
+				} else {
+					document.addEventListener('DOMContentLoaded', _.highlightAll);
+				}
+			}
+		}
+	
+		return _self.Prism;
+	}();
+	
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = Prism;
+	}
+	
+	// hack for components to work correctly in node.js
+	if (typeof global !== 'undefined') {
+		global.Prism = Prism;
+	}
+	
+	/* **********************************************
+	     Begin prism-markup.js
+	********************************************** */
+	
+	Prism.languages.markup = {
+		'comment': /<!--[\w\W]*?-->/,
+		'prolog': /<\?[\w\W]+?\?>/,
+		'doctype': /<!DOCTYPE[\w\W]+?>/,
+		'cdata': /<!\[CDATA\[[\w\W]*?]]>/i,
+		'tag': {
+			pattern: /<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,
+			inside: {
+				'tag': {
+					pattern: /^<\/?[^\s>\/]+/i,
+					inside: {
+						'punctuation': /^<\/?/,
+						'namespace': /^[^\s>\/:]+:/
+					}
+				},
+				'attr-value': {
+					pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,
+					inside: {
+						'punctuation': /[=>"']/
+					}
+				},
+				'punctuation': /\/?>/,
+				'attr-name': {
+					pattern: /[^\s>\/]+/,
+					inside: {
+						'namespace': /^[^\s>\/:]+:/
+					}
+				}
+	
+			}
+		},
+		'entity': /&#?[\da-z]{1,8};/i
+	};
+	
+	// Plugin to make entity title show the real entity, idea by Roman Komarov
+	Prism.hooks.add('wrap', function (env) {
+	
+		if (env.type === 'entity') {
+			env.attributes['title'] = env.content.replace(/&amp;/, '&');
+		}
+	});
+	
+	Prism.languages.xml = Prism.languages.markup;
+	Prism.languages.html = Prism.languages.markup;
+	Prism.languages.mathml = Prism.languages.markup;
+	Prism.languages.svg = Prism.languages.markup;
+	
+	/* **********************************************
+	     Begin prism-css.js
+	********************************************** */
+	
+	Prism.languages.css = {
+		'comment': /\/\*[\w\W]*?\*\//,
+		'atrule': {
+			pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i,
+			inside: {
+				'rule': /@[\w-]+/
+				// See rest below
+			}
+		},
+		'url': /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
+		'selector': /[^\{\}\s][^\{\};]*?(?=\s*\{)/,
+		'string': /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,
+		'property': /(\b|\B)[\w-]+(?=\s*:)/i,
+		'important': /\B!important\b/i,
+		'function': /[-a-z0-9]+(?=\()/i,
+		'punctuation': /[(){};:]/
+	};
+	
+	Prism.languages.css['atrule'].inside.rest = Prism.util.clone(Prism.languages.css);
+	
+	if (Prism.languages.markup) {
+		Prism.languages.insertBefore('markup', 'tag', {
+			'style': {
+				pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,
+				lookbehind: true,
+				inside: Prism.languages.css,
+				alias: 'language-css'
+			}
+		});
+	
+		Prism.languages.insertBefore('inside', 'attr-value', {
+			'style-attr': {
+				pattern: /\s*style=("|').*?\1/i,
+				inside: {
+					'attr-name': {
+						pattern: /^\s*style/i,
+						inside: Prism.languages.markup.tag.inside
+					},
+					'punctuation': /^\s*=\s*['"]|['"]\s*$/,
+					'attr-value': {
+						pattern: /.+/i,
+						inside: Prism.languages.css
+					}
+				},
+				alias: 'language-css'
+			}
+		}, Prism.languages.markup.tag);
+	}
+	
+	/* **********************************************
+	     Begin prism-clike.js
+	********************************************** */
+	
+	Prism.languages.clike = {
+		'comment': [{
+			pattern: /(^|[^\\])\/\*[\w\W]*?\*\//,
+			lookbehind: true
+		}, {
+			pattern: /(^|[^\\:])\/\/.*/,
+			lookbehind: true
+		}],
+		'string': {
+			pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+			greedy: true
+		},
+		'class-name': {
+			pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,
+			lookbehind: true,
+			inside: {
+				punctuation: /(\.|\\)/
+			}
+		},
+		'keyword': /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
+		'boolean': /\b(true|false)\b/,
+		'function': /[a-z0-9_]+(?=\()/i,
+		'number': /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,
+		'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,
+		'punctuation': /[{}[\];(),.:]/
+	};
+	
+	/* **********************************************
+	     Begin prism-javascript.js
+	********************************************** */
+	
+	Prism.languages.javascript = Prism.languages.extend('clike', {
+		'keyword': /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
+		'number': /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,
+		// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+		'function': /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i
+	});
+	
+	Prism.languages.insertBefore('javascript', 'keyword', {
+		'regex': {
+			pattern: /(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
+			lookbehind: true,
+			greedy: true
+		}
+	});
+	
+	Prism.languages.insertBefore('javascript', 'string', {
+		'template-string': {
+			pattern: /`(?:\\\\|\\?[^\\])*?`/,
+			greedy: true,
+			inside: {
+				'interpolation': {
+					pattern: /\$\{[^}]+\}/,
+					inside: {
+						'interpolation-punctuation': {
+							pattern: /^\$\{|\}$/,
+							alias: 'punctuation'
+						},
+						rest: Prism.languages.javascript
+					}
+				},
+				'string': /[\s\S]+/
+			}
+		}
+	});
+	
+	if (Prism.languages.markup) {
+		Prism.languages.insertBefore('markup', 'tag', {
+			'script': {
+				pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,
+				lookbehind: true,
+				inside: Prism.languages.javascript,
+				alias: 'language-javascript'
+			}
+		});
+	}
+	
+	Prism.languages.js = Prism.languages.javascript;
+	
+	/* **********************************************
+	     Begin prism-file-highlight.js
+	********************************************** */
+	
+	(function () {
+		if (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {
+			return;
+		}
+	
+		self.Prism.fileHighlight = function () {
+	
+			var Extensions = {
+				'js': 'javascript',
+				'py': 'python',
+				'rb': 'ruby',
+				'ps1': 'powershell',
+				'psm1': 'powershell',
+				'sh': 'bash',
+				'bat': 'batch',
+				'h': 'c',
+				'tex': 'latex'
+			};
+	
+			if (Array.prototype.forEach) {
+				// Check to prevent error in IE8
+				Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+					var src = pre.getAttribute('data-src');
+	
+					var language,
+					    parent = pre;
+					var lang = /\blang(?:uage)?-(?!\*)(\w+)\b/i;
+					while (parent && !lang.test(parent.className)) {
+						parent = parent.parentNode;
+					}
+	
+					if (parent) {
+						language = (pre.className.match(lang) || [, ''])[1];
+					}
+	
+					if (!language) {
+						var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+						language = Extensions[extension] || extension;
+					}
+	
+					var code = document.createElement('code');
+					code.className = 'language-' + language;
+	
+					pre.textContent = '';
+	
+					code.textContent = 'Loading…';
+	
+					pre.appendChild(code);
+	
+					var xhr = new XMLHttpRequest();
+	
+					xhr.open('GET', src, true);
+	
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState == 4) {
+	
+							if (xhr.status < 400 && xhr.responseText) {
+								code.textContent = xhr.responseText;
+	
+								Prism.highlightElement(code);
+							} else if (xhr.status >= 400) {
+								code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+							} else {
+								code.textContent = '✖ Error: File does not exist or is empty';
+							}
+						}
+					};
+	
+					xhr.send(null);
+				});
+			}
+		};
+	
+		document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {'use strict';
