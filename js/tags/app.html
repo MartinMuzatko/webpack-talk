@@ -12,31 +12,52 @@
     <footer>
         <div>
             <p>
-                Coded with <span style="color: red">♥</span> by
+                Created with <span style="color: red">♥</span> by
                 <a href="https://github.com/MartinMuzatko">@MartinMuzatko</a>
             </p>
         </div>
     </footer>
     <script>
         this.items = [
-            'index',
+            'intro',
+            'what',
+            'tooling',
             'loader',
             'plugin',
             'thanks',
         ]
+
+        nextSlide() {
+            this.slideClass = 'loading next'
+            riot.route(this.items[this.items.indexOf(this.name) + 1])
+        }
+
+        prevSlide() {
+            this.slideClass = 'loading prev'
+            riot.route(this.items[this.items.indexOf(this.name) - 1])
+        }
+
         this.on('mount', () => {
             riot.route.start(true)
             riot.route((name) => {
-                if (name == 'index' || !name) {
-                    this.content.innerHTML = require(`../../README.md`)
-                } else {
-                    this.content.innerHTML = require(`../../docs/${name}.md`)
+                if (!!~this.items.indexOf(name)) {
+                    this.content.innerHTML = require(`../../slides/${name}.md`)
                 }
                 this.name = name
-                riot.mount('loader, xs')
                 this.update()
             })
-            riot.route('index')
+            riot.route('intro')
+
+            document.body.addEventListener('keydown', (event) => {
+                var methods = {
+                    'ArrowRight': this.nextSlide,
+                    'ArrowLeft': this.prevSlide,
+                }
+                if (methods.hasOwnProperty(event.code)) {
+                    methods[event.code]()
+                }
+            })
+
         })
     </script>
 </app>

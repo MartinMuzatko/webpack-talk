@@ -8,7 +8,7 @@ code[class*=language-], pre[class*=language-] {
 }
 
 body {
-    background: @color-light;
+    //background: @color-light;
     min-width: @breakpoint-xs;
 }
 
@@ -65,7 +65,7 @@ nav {
 
 article {
     .stripe();
-    padding: 0 1em;
+    padding: 4em 1em;
     padding-top: 5em;
     div {
         padding: 1em 0;
@@ -82,5 +82,12 @@ article > h1 {
     &:before {
         content: '// ';
         color: @color-primary;
+    }
+}
+
+article.loading {
+    transition: all ease 1s;
+    &.next {
+        transform: translateX(-100%);
     }
 }

@@ -1,0 +1,17 @@
+### Preprocessing/Transpiling/Templating
+- JS
+    - Coffeescript
+    - Typescript
+    - Babel (ES6)
+- CSS
+    - Less
+    - Sass/Scss
+    - Stylus
+    - Postcss (Autoprefixer)
+- HTML
+    - Yade
+    - HAML
+    - Mustache/Handlebars
+    - Smarty
+    - Markdown
+    - Riot
