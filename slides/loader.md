@@ -17,7 +17,7 @@ There are three loaders here, because we have to tell Webpack, that we are going
 
 Loaders can be chained, in order to pass a file through various processing steps.
 
-## Timeslots
+## Build lifecycle
 
 ```js
 module: {

@@ -1,10 +1,8 @@
-### Dependency management
+
+
+### Module dependency management
 - require('marked')
 - import marked from 'marked'
-
-### Optimizing
-- minify
-- fallback (rgba > hex)
 
 ### Tools
 - Sourcemaps
